@@ -84,24 +84,8 @@ Typical subfolders contain
 - reference alignments for evaluation  
 - folders for storing experiment outputs  
 
-### 2. Run a conference benchmark experiment
 
-`conference_experiment.py` demonstrates the pipeline on a general ontology matching benchmark.
-
-```bash
-python conference_experiment.py
-```
-
-This script
-
-- loads the OAEI Conference style ontologies  
-- generates candidate correspondences  
-- applies the configured matching and filtering steps  
-- saves the produced alignments and evaluation metrics under `Data`  
-
-Check the script for configuration flags, paths, and experiment switches you may want to change.
-
-### 3. Run energy domain experiments
+### 2. Run energy domain experiments
 
 Energy specific experiments are organized in
 
