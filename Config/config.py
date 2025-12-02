@@ -13,5 +13,5 @@ object_property_weight = (0.2, 0.6, 0.2)
 
 # Ontology Reading
 class_mapping_save_folder = '../../Data/mapping/class'
-deepseek_api = r"sk-b1c2a4fdb21e4cdd82ea5531a64cc24e"
+deepseek_api = r""
 gemini_api = r""
