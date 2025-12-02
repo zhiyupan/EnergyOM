@@ -1,0 +1,7 @@
+Entity1,Entity2
+https://sargon-n5geh.netlify.app/ontology/1.0/classes/Room,https://w3id.org/seas/Room
+https://w3id.org/saref#Device,https://w3id.org/sbeo#Device
+https://w3id.org/saref#Sensor,http://www.w3.org/ns/sosa/Sensor
+https://sargon-n5geh.netlify.app/ontology/1.0/object_properties/located_in,https://w3id.org/sbeo#locatedIn
+https://w3id.org/saref#hasDescription,https://w3id.org/sbeo#hasDescription
+https://w3id.org/saref#hasValue,https://w3id.org/sbeo#hasValue

@@ -1,0 +1,2585 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+</.well-known/genid/emkpi/N2d98e4f6d6904833b90ccddc5f2b55c2> a owl:AllDisjointClasses ;
+    owl:members </.well-known/genid/emkpi/N2ce811860d3b434fbda1f8ef7a42a526> .
+
+</.well-known/genid/emkpi/N45bc9e8c6c7f44b09c31aece7aa95277> a owl:AllDisjointClasses ;
+    owl:members </.well-known/genid/emkpi/N1cd131fd97e040059a6afb5cdb54f198> .
+
+</.well-known/genid/emkpi/Na584d3633019423e9f891234480a674a> a owl:AllDisjointClasses ;
+    owl:members </.well-known/genid/emkpi/N5ecf6196f21c421b8c756ee51e3857a3> .
+
+</.well-known/genid/emkpi/Nc05e31112cea4e398c8fd095b4e63a9d> a owl:AllDisjointClasses ;
+    owl:members </.well-known/genid/emkpi/N927e0371fa224b0682754cd0bcd410a5> .
+
+</.well-known/genid/emkpi/Nf303e53ee089463da49237c3110b6c84> a owl:AllDisjointClasses ;
+    owl:members </.well-known/genid/emkpi/Ne4133ee91722449ba57ea0b384736c18> .
+
+<http://energy.linkeddata.es/em-kpi/ontology> a owl:Ontology ;
+    rdfs:label "EM-KPI Ontology, Energy Management - Key Performance Indicator Ontology"@en ;
+    dc:identifier "http://energy.linkeddata.es/em-kpi/ontology"^^xsd:string ;
+    dcterms:modified "30/11/2016"@en ;
+    rdfs:comment """The targeted EM-KPI Ontology are aimed to exchange both master data and key performance information in district and building energy management for a multi-level energy performance analysis that addresses stakeholders’ performance goals.\r
+The targeted EM-KPI ontology is proposed to be represented by two subparts, i.e. EM (Energy Management) master data part and KPI (Key Performance Indicator) part. \r
+The purpose of KPI part is to represent the key performance information. It is supposed to describe the definition of each KPI and their relationship, KPI calculation and needed datum source, the related performance goal and evaluated object. This subpart should provide the basis for energy performance tracking and assessment.\r
+The purpose of the EM master data part is to integrate the master data. It is supposed to describe the master data domains, master data objects and master data elements, and the relationship between each other. This subpart is used to exploit the knowledge in master data sources for identification of energy performance problems and key areas for improvement, so as to make informed decision in energy performance improvement.\r
+The master data domains in district and building energy management include energy domain (e.g. energy generation, energy distribution, energy consumption), sensor and measurement domain, building domain, facility domain, occupancy, weather, location, etc."""@en ;
+    owl:versionIRI <http://energy.linkeddata.es/em-kpi/ontology/1.1> ;
+    owl:versionInfo "EM-KPI Ontology 1.1"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#Battery> a owl:Class ;
+    rdfs:label "Battery"@en ;
+    rdfs:comment "The set of batteries that stores energy."@en ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#StoringUnit> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#CO2Concentration> a owl:Class ;
+    rdfs:label "CO2Concentration"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#IndoorAirQuality> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#DHWSystem> a owl:Class ;
+    rdfs:label "DHWSystem"@en ;
+    rdfs:comment "The domestic hot water system that provides hot water to the building"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyConsumerFacility> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#DistributedEnergyResource> a owl:Class ;
+    rdfs:label "DistributedEnergyResources"^^xsd:string ;
+    rdfs:comment "Distributed energy resource is the site energy resource in district like CHP (Combined Heat and Power), photovoltaic generation plant, etc."@en ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#EquipmentContainer> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#Duct> a owl:Class ;
+    rdfs:label "Duct"@en ;
+    rdfs:comment "The duct in HVAC system"@en ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#BuildingEquipment> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#ElectricVehicle> a owl:Class ;
+    rdfs:label "ElectricVehicle"^^xsd:string ;
+    rdfs:comment "Electric vehicle that stores energy."@en ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#StoringUnit> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#Fan> a owl:Class ;
+    rdfs:label "Fan"@en ;
+    rdfs:comment "The fan in HVAC system"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/Na8fbdc3c74154f4d9484da64b9c4c051>,
+        <http://energy.linkeddata.es/em-kpi/ontology#BuildingEquipment> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#FeedInTariff> a owl:Class ;
+    rdfs:label "FeedInTariff"@en ;
+    rdfs:comment "The tariff for sale energy per unit to main grid"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyTariff> ;
+    owl:disjointWith <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyCostTariff> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#GlobalHorizontalSolarIrradiance> a owl:Class ;
+    rdfs:label "GlobalHorizontalSolar"@en ;
+    rdfs:comment "The intensity of global solar radiation in horizontal level"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#SolarIrradiance> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#GlobalInclined41SolarIrradiance> a owl:Class ;
+    rdfs:label "GlobalInclined41Solar"@en ;
+    rdfs:comment "The intensity of global solar radiation in angel of 41 degree, the best angel in Madrid"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#SolarIrradiance> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#HVACSystem> a owl:Class ;
+    rdfs:label "HVACSystem"@en ;
+    rdfs:comment "The Heating, Ventilation and Air Conditioning (HVAC) system that provides building indoor comfort"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyConsumerFacility> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#IndoorHumidity> a owl:Class ;
+    rdfs:label "IndoorHumidity"@en ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#ThermalComfort> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#IndoorTemperature> a owl:Class ;
+    rdfs:label "IndoorTemperature"@en ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#ThermalComfort> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#Non-renewableGeneratingUnit> a owl:Class ;
+    rdfs:label "Non-renewableGeneratingUnit"^^xsd:string ;
+    rdfs:comment "The generating unit produces energy with non-renewable resources."@en ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#GeneratingUnit> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#OccupantNumber> a owl:Class ;
+    rdfs:label "OccupantNumber"@en ;
+    rdfs:comment "The number of occupants in the zone or building"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/ProcessOntology.owl#OccupancyParameter> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#PVSystem> a owl:Class ;
+    rdfs:label "PVSystem"@en ;
+    rdfs:comment "System that generates electricity through solar photovoltaic panel"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyProducerFacility> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#Pipe> a owl:Class ;
+    rdfs:label "Pipe"@en ;
+    rdfs:comment "The pipe in HVAC system, DHW system, etc."@en ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#BuildingEquipment> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#Pump> a owl:Class ;
+    rdfs:label "Pump"@en ;
+    rdfs:comment "The pump in HVAC system, DHW system, etc. "@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/Nf723770699894885be37353c02d8ecf8>,
+        <http://energy.linkeddata.es/em-kpi/ontology#BuildingEquipment> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#Substation> a owl:Class ;
+    rdfs:label "Substation"@en ;
+    rdfs:comment "Substation is where transform the high/medio voltage power from main grid to low voltage for the energy use of district consumers."@en ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#EquipmentContainer> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#WindGeneratingUnit> a owl:Class ;
+    rdfs:label "WindGeneratingUnit"^^xsd:string ;
+    rdfs:comment "The generating unit produces energy with wind energy, wind turbines."@en ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#RenewableGeneratingUnit> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#WindPowerSystem> a owl:Class ;
+    rdfs:label "WindPowerSystem"@en ;
+    rdfs:comment "System that generates electricity through wind power"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyProducerFacility> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#WorkstationLighting> a owl:Class ;
+    rdfs:label "WorkstationLighting"@en ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#VisualComfort> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#energyStoredBy> a owl:ObjectProperty ;
+    rdfs:label "energyStoredBy"@en ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#storesEnergy> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#energyTypeStoredBy> a owl:ObjectProperty ;
+    rdfs:label "energyTypeStoredBy"@en ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#storesEnergyType> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasMathematicalModel> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasMathematicalModel"@en ;
+    rdfs:comment "Relation linking a KPI and its mathematical model"@en ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isMathematicalModelOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isAssociatedZoneOf> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isAssociatedZoneOf"@en ;
+    owl:inverseOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#hasAssociatedZone> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isBeginningOf> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isBeginningOf"@en ;
+    owl:inverseOf time:hasBeginning .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isDirectionOf> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isDirectionOf"@en ;
+    rdfs:comment "Inverse property of wo:hasDirection"@en ;
+    owl:inverseOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#hasDirection> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isEndOf> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isEndOf"@en ;
+    owl:inverseOf time:hasEnd .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isEquationOf> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isEquationOf"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#Equation> ;
+    rdfs:range <http://identifiers.org/mamo/Mathematical_model> ;
+    owl:inverseOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#containsEquation> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isSpeedOf> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isSpeedOf"@en ;
+    rdfs:comment "Inverse property of wo:hasSpeed"@en ;
+    owl:inverseOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#hasSpeed> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isSuppliedBy> a owl:ObjectProperty ;
+    rdfs:label "isSuppliedBy"@en ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#suppliesTo> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isU-valueOf> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isU-valueOf"@en ;
+    owl:inverseOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#containsU-value> .
+
+<http://identifiers.org/mamo/Dependent_variable> a owl:Class ;
+    rdfs:label "Dependent_variable"^^xsd:string ;
+    rdfs:subClassOf <http://identifiers.org/mamo/Variable> ;
+    owl:disjointWith <http://identifiers.org/mamo/Independent_variable> .
+
+dc:creator a owl:AnnotationProperty .
+
+dc:date a owl:AnnotationProperty .
+
+dc:identifier a owl:AnnotationProperty .
+
+dcterms:modified a owl:AnnotationProperty .
+
+rdfs:comment a owl:AnnotationProperty .
+
+rdfs:isDefinedBy a owl:AnnotationProperty .
+
+rdfs:label a owl:AnnotationProperty .
+
+rdfs:seeAlso a owl:AnnotationProperty .
+
+owl:topDataProperty a owl:DatatypeProperty .
+
+owl:topObjectProperty a owl:ObjectProperty .
+
+owl:versionInfo a owl:AnnotationProperty .
+
+<http://www.wurvoc.org/vocabularies/om-1.8/Singular_unit> a owl:Class ;
+    rdfs:label "Singular_unit"^^xsd:string ;
+    rdfs:subClassOf <http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure> .
+
+<http://www.wurvoc.org/vocabularies/om-1.8/Unit_division> a owl:Class ;
+    rdfs:label "Unit_division"^^xsd:string ;
+    rdfs:subClassOf <http://www.wurvoc.org/vocabularies/om-1.8/Compound_unit> .
+
+<http://www.wurvoc.org/vocabularies/om-1.8/Unit_exponentiation> a owl:Class ;
+    rdfs:label "Unit_exponentiation"^^xsd:string ;
+    rdfs:subClassOf <http://www.wurvoc.org/vocabularies/om-1.8/Compound_unit> .
+
+<http://www.wurvoc.org/vocabularies/om-1.8/Unit_multiplication> a owl:Class ;
+    rdfs:label "Unit_multiplication"^^xsd:string ;
+    rdfs:subClassOf <http://www.wurvoc.org/vocabularies/om-1.8/Compound_unit> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#Appliance> a owl:Class ;
+    rdfs:label "Appliance"^^xsd:string ;
+    rdfs:comment "The household appliance that consumes energy, such as fridge, oven, TV, etc."@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyConsumerFacility> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#Shade> a owl:Class ;
+    rdfs:label "Shade"@en ;
+    rdfs:comment "The shade of building envelope"@en ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#BuildingEquipment> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#energyProducedBy> a owl:ObjectProperty ;
+    rdfs:label "energyProducedBy"@en ;
+    owl:inverseOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#producesEnergy> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#energyTypeProducedBy> a owl:ObjectProperty ;
+    rdfs:label "energyTypeProducedBy"@en ;
+    rdfs:domain <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyType> ;
+    owl:inverseOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#producesEnergyType> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#Humidity> a owl:Class ;
+    rdfs:label "Humidity"@en ;
+    rdfs:comment "Outdoor humidity"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#WeatherPhenomenon> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#Temperature> a owl:Class ;
+    rdfs:label "Temperature"@en ;
+    rdfs:comment "Outdoor temperature"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#WeatherPhenomenon> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#WeatherCondition> a owl:Class ;
+    rdfs:label "WeatherCondition"@en ;
+    rdfs:comment "The weather condition describes the weather such as rain, sun, snow, etc."@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Weather> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Capacity> a owl:Class ;
+    rdfs:label "Capacity"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#EquipmentParameter> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Efficiency> a owl:Class ;
+    rdfs:label "Efficiency"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#EquipmentParameter> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#InputWatts> a owl:Class ;
+    rdfs:label "InputtWatts"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#EquipmentParameter> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#LightingSystem> a owl:Class ;
+    rdfs:label "LightingSystem"@en ;
+    rdfs:comment "The lighting system in the building"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyConsumerFacility> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Power> a owl:Class ;
+    rdfs:label "power"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#EquipmentParameter> .
+
+</.well-known/genid/emkpi/N03da418a38e14b2cbd656ea9fea70078> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#composes> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#EquipmentContainer> .
+
+</.well-known/genid/emkpi/N04810d0ead0348628d9bdd390f636ee4> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergySupply> ;
+    rdf:rest </.well-known/genid/emkpi/N684b981b64e34588a0fec382492ea5fb> .
+
+</.well-known/genid/emkpi/N054e2634483846339cd35dbd0a406547> a rdfs:Datatype ;
+    owl:unionOf </.well-known/genid/emkpi/Nf2aa6dc576424f7ba6d2a69af9168276> .
+
+</.well-known/genid/emkpi/N05cd96b416d54120a165007b62213fd4> a owl:Restriction ;
+    owl:onClass <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#U-value> ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#containsU-value> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N05ec508de6d54e0997c59b5352d684ec> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#EnergyProduction> ;
+    rdf:rest </.well-known/genid/emkpi/N3dd580d67eef434ba7f76f5f7801bf7c> .
+
+</.well-known/genid/emkpi/N080dcf454be4414a85d14fad181e9572> rdf:first <http://schema.org/Event> ;
+    rdf:rest </.well-known/genid/emkpi/Nb40ea2bf8a1540a1806e1266644c8ebd> .
+
+</.well-known/genid/emkpi/N0a5cb2c9d83540beb2844fcfa2020dcb> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#District> ;
+    rdf:rest </.well-known/genid/emkpi/N5e6d12a8733a433797e2599413a7c735> .
+
+</.well-known/genid/emkpi/N0c3bc7c1833b495fb76ed1b4fd322e2a> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#TacticalKPI> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/N0c70c2822a39437f98c36bd917b1ade4> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#consumesEnergy> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyDemand> .
+
+</.well-known/genid/emkpi/N0c865a24d6764ec6aacae590ca5d28a3> rdf:first <http://purl.oclc.org/NET/ssnx/ssn#Observation> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/N0cb622000b7e41aa85c77c00877eea68> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#consumesEnergyType> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyType> .
+
+</.well-known/genid/emkpi/N0d68a67c61804c1499a016d5b7ded0db> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#contains> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyConsumerFacility> .
+
+</.well-known/genid/emkpi/N0dd3c09421a6423dbb69698b59ebf375> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#producesEnergy> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#EnergyProduction> .
+
+</.well-known/genid/emkpi/N0f0522e6f2664ad2b6b591476e5a651a> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#isAssociatedObjectOf> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#KPICalculation> .
+
+</.well-known/genid/emkpi/N0fa82356ebff40c2b9bd659a8e14937e> a owl:Restriction ;
+    owl:onProperty <http://purl.oclc.org/NET/ssnx/ssn#isPropertyOf> ;
+    owl:someValuesFrom <http://purl.oclc.org/NET/ssnx/ssn#FeatureOfInterest> .
+
+</.well-known/genid/emkpi/N10c4667955c6462ca4ff08799c341ae8> a owl:Restriction ;
+    owl:onClass <http://energy.linkeddata.es/em-kpi/ontology#PhotovoltaicType> ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasPhotovoltaicType> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N1162401db80343078ee6a23b7702b8c5> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#providesTo> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#EnergyStorage> .
+
+</.well-known/genid/emkpi/N11cecfae8d154039939a21073b285ba0> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasPerformanceGoal> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#PerformanceGoal> .
+
+</.well-known/genid/emkpi/N11d99eb990f840d385075d6267cbdcb7> rdf:first </.well-known/genid/emkpi/Na5487d93ef524131939307a538054bbc> ;
+    rdf:rest </.well-known/genid/emkpi/Nb57cc74bf8a2427aaffdb3fa80fedc53> .
+
+</.well-known/genid/emkpi/N1208822417e84eeda41f5f35e0aefd87> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasEquipmentParameter> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#EquipmentParameter> .
+
+</.well-known/genid/emkpi/N139608b28f2b4f4b8ef4b5734fb24b35> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#isProvidedBy> ;
+    owl:someValuesFrom <http://purl.oclc.org/NET/ssnx/ssn#Observation> .
+
+</.well-known/genid/emkpi/N15defba3f9e0435ab961165f3cb67f70> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#DatumSource> ;
+    rdf:rest </.well-known/genid/emkpi/N71c8f03e71284671a4214b9377f1cd1d> .
+
+</.well-known/genid/emkpi/N19dba99b828b4b47a0ad6e5263d21c73> rdf:first </.well-known/genid/emkpi/N2b8700a1a07249768c290f09d33ed00b> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/N1a3e5461c9ba477ebc317ed09ddc779d> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#providesTo> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyGain> .
+
+</.well-known/genid/emkpi/N1a7618981f1c493183cf44726617eaba> a owl:Restriction ;
+    owl:onClass <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Building> ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#isIn> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N1bf9e1d652b64ff8962bd8f6a90d8011> a owl:Restriction ;
+    owl:onDataRange xsd:string ;
+    owl:onProperty <http://www.w3.org/2003/01/geo/wgs84_pos#lat> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N1c29c0f5d3e24b3a8e8b33e8baced035> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#storesEnergy> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#EnergyStorage> .
+
+</.well-known/genid/emkpi/N1c3cd25947824d8ebdef45b644451bb6> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergySupply> ;
+    rdf:rest </.well-known/genid/emkpi/N6263622ef687438f9bb269acc94c62f7> .
+
+</.well-known/genid/emkpi/N1c4e7ac612a643a998fcd91e5ce1bf8d> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasForecast> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#EnergyProductionForecast> .
+
+</.well-known/genid/emkpi/N1cd131fd97e040059a6afb5cdb54f198> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#EnergyForecast> ;
+    rdf:rest </.well-known/genid/emkpi/N7503282723004be181cc0fdbffad2ecf> .
+
+</.well-known/genid/emkpi/N1ec76a0ca39b4fadbb770ab4ecf2272d> a owl:Restriction ;
+    owl:onClass <http://energy.linkeddata.es/em-kpi/ontology#WindSpeed> ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#hasSpeed> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N1f6d8cc7607e4d968e5425c0cf2367cd> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#containsConstant> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#UniversalConstant> .
+
+</.well-known/genid/emkpi/N1feccddac6b9487f85eaefb6120e4631> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#PowerEquipment> ;
+    rdf:rest </.well-known/genid/emkpi/Nb766efd79a3444b88dc3d38d25bc0bc2> .
+
+</.well-known/genid/emkpi/N21b24306af5240aa8b6e5e61c69748ec> a owl:Restriction ;
+    owl:onDataRange xsd:string ;
+    owl:onProperty dcterms:identifier ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N226ea45bd9564ddfa5fd2732801ec38b> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#contains> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#Room> .
+
+</.well-known/genid/emkpi/N24599b16664a45fcb032410aa293f4a2> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Zone> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/N252b5abd89b1453ab056a510c823e113> a owl:Restriction ;
+    owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasValue> ;
+    owl:someValuesFrom xsd:float .
+
+</.well-known/genid/emkpi/N267d974ce0124c6787a626cbd7bb8761> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#PowerEquipment> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/N268d4c8373ea4298b37fbd7ae58a5a70> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasDeterminant> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyTariff> .
+
+</.well-known/genid/emkpi/N26b6b788802b4fc9bf0ac26a9ed49d1c> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#isFeatureOfInterestOf> ;
+    owl:someValuesFrom <http://purl.oclc.org/NET/ssnx/ssn#Observation> .
+
+</.well-known/genid/emkpi/N26e74ca468d847638637bffc885e587f> a owl:Restriction ;
+    owl:onClass <http://purl.oclc.org/NET/ssnx/ssn#FeatureOfInterest> ;
+    owl:onProperty <http://purl.oclc.org/NET/ssnx/ssn#featureOfInterest> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N2775fa9a4f474960bccb8b2325b591ac> a owl:Restriction ;
+    owl:onDataRange xsd:string ;
+    owl:onProperty dcterms:identifier ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N279ba671062446be9966a6bbda30a443> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#ExtWindow> ;
+    rdf:rest </.well-known/genid/emkpi/N40f068d733a249ddaa9f19f80a2ddda1> .
+
+</.well-known/genid/emkpi/N2823871e83e24e85b3340d05eac4935a> a owl:Class ;
+    owl:intersectionOf </.well-known/genid/emkpi/N1feccddac6b9487f85eaefb6120e4631> .
+
+</.well-known/genid/emkpi/N2861b21f6d224dcbae6e39138c7fe3b1> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#KPIValue> ;
+    rdf:rest </.well-known/genid/emkpi/Nb6ecdf08847c480ca5d1585e9e342d2c> .
+
+</.well-known/genid/emkpi/N29418a862e4f4e31a8e8cf55ef6e4145> a owl:Class ;
+    owl:complementOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#Equipment> .
+
+</.well-known/genid/emkpi/N29a1c3e0e2944b7aaf07491fc983b1e0> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#deliversEnergy> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergySupply> .
+
+</.well-known/genid/emkpi/N2b316f5c89dd444b9d7c2e9a2ddd6b92> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#EnergySupplyFromSiteProduction> ;
+    rdf:rest </.well-known/genid/emkpi/Nab7c5fe319744191a4a926baec18e46e> .
+
+</.well-known/genid/emkpi/N2b8700a1a07249768c290f09d33ed00b> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#consumesEnergy> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyDemand> .
+
+</.well-known/genid/emkpi/N2c09e2fd82e6445c85c01e603e3162dd> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#BuildingElement> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/N2ce811860d3b434fbda1f8ef7a42a526> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#BuildingEquipment> ;
+    rdf:rest </.well-known/genid/emkpi/Nab44f1fa8c144f26a3c01f82f805ec91> .
+
+</.well-known/genid/emkpi/N2cfd01b72d73480cb81243c46b7dc694> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#OperationalKPI> ;
+    rdf:rest </.well-known/genid/emkpi/Nd470533c9eb649dd96760e1bdefe9e6b> .
+
+</.well-known/genid/emkpi/N2dae4b134e4e4e70a3295997fdbcd6b5> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#deliversEnergyType> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyType> .
+
+</.well-known/genid/emkpi/N3268911453ae4951971257e9542d3010> rdf:first </.well-known/genid/emkpi/Nb57876eb37be47719da6e18221867b36> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/N32794ff2faab43658ea4d19b230dd0b4> a owl:Class ;
+    owl:unionOf </.well-known/genid/emkpi/N6c7507672d71490d92e3969fd15d0e3e> .
+
+</.well-known/genid/emkpi/N3527f86cfd724ebcb3b264ca5f385fe7> a owl:Class ;
+    owl:unionOf </.well-known/genid/emkpi/N2cfd01b72d73480cb81243c46b7dc694> .
+
+</.well-known/genid/emkpi/N364b297b06d440ea8a4d1d0639c09d19> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasOccupant> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#Occupant> .
+
+</.well-known/genid/emkpi/N3672ee77ddca4e0fba7628c865331fbe> rdf:first </.well-known/genid/emkpi/Ndf28aee292e5443ca333e248b8fe3f3d> ;
+    rdf:rest </.well-known/genid/emkpi/N98db611e0eec428588ad4441b7d515d6> .
+
+</.well-known/genid/emkpi/N3a69ec4eee5c4b96a35004a9e76dff30> a owl:Restriction ;
+    owl:onDataRange xsd:string ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasKPIDefinition> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N3c9e4fa96c3f411fb6505ddc3be6d8fe> rdf:first </.well-known/genid/emkpi/N5563fa5ed4f94d0285de3e6b4cd7608b> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/N3d245e555a44428381c265a90b208573> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#PowerEquipment> ;
+    rdf:rest </.well-known/genid/emkpi/N3c9e4fa96c3f411fb6505ddc3be6d8fe> .
+
+</.well-known/genid/emkpi/N3d5f6a11304a4bbd96b4e687dbe868fd> a owl:Restriction ;
+    owl:onDataRange xsd:gYear ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasYearOfConstruction> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N3dd580d67eef434ba7f76f5f7801bf7c> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#EnergyStorage> ;
+    rdf:rest </.well-known/genid/emkpi/N0c865a24d6764ec6aacae590ca5d28a3> .
+
+</.well-known/genid/emkpi/N3f8b0f40de16405094603e8f7505e74d> rdf:first <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject> ;
+    rdf:rest </.well-known/genid/emkpi/N5e7dc552b70445f08c271c14298eea12> .
+
+</.well-known/genid/emkpi/N403688b93bba44809422d5f6d3e36ddc> a owl:Class ;
+    owl:unionOf </.well-known/genid/emkpi/N0a5cb2c9d83540beb2844fcfa2020dcb> .
+
+</.well-known/genid/emkpi/N4056c4683e134d0187ffc2327ce2bc1a> a owl:Restriction ;
+    owl:onClass time:Instant ;
+    owl:onProperty time:hasBeginning ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N4062d6a023734809bef06d65ce9a7c40> a owl:Restriction ;
+    owl:onClass <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#U-value> ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#containsU-value> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N40d3bedddaf14daa8a3ef3d749478d02> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyDemand> ;
+    rdf:rest </.well-known/genid/emkpi/N04810d0ead0348628d9bdd390f636ee4> .
+
+</.well-known/genid/emkpi/N40f068d733a249ddaa9f19f80a2ddda1> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#Roof> ;
+    rdf:rest </.well-known/genid/emkpi/Nef35944c06454a91a1b04d9485a831eb> .
+
+</.well-known/genid/emkpi/N410fc01554944b3ea88d6fc80a00ed8c> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#producesEnergyType> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyType> .
+
+</.well-known/genid/emkpi/N41485bb101244e61b45759b2583c76c5> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#isFeatureOfInterestOf> ;
+    owl:someValuesFrom <http://purl.oclc.org/NET/ssnx/ssn#Observation> .
+
+</.well-known/genid/emkpi/N42126ed01a8e4f18affab18d35484bd2> rdf:first xsd:integer ;
+    rdf:rest </.well-known/genid/emkpi/N761b24c9fcde45fc8c81529be9eb41f7> .
+
+</.well-known/genid/emkpi/N422eab9213d8470a8275795e5fc77bc9> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/ProcessOntology.owl#hasInfluenceOn> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#OccupantBehavior> .
+
+</.well-known/genid/emkpi/N427a7fa9b287457ea8b8eb7a7f6df2d1> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasDisaggregation> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#OperationalKPI> .
+
+</.well-known/genid/emkpi/N4324340408a2466c9fe9cf81e87b8015> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#StrategicKPI> ;
+    rdf:rest </.well-known/genid/emkpi/N0c3bc7c1833b495fb76ed1b4fd322e2a> .
+
+</.well-known/genid/emkpi/N45a048b7db514c038d2376d612029948> a owl:Restriction ;
+    owl:onClass <http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure> ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasUnit> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N48be755be47e46c5a43d82e7140021cc> a owl:Restriction ;
+    owl:onDataRange xsd:string ;
+    owl:onProperty dcterms:title ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N49be0afcf0fc42f89423f6bf4cd10f63> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyGain> ;
+    rdf:rest </.well-known/genid/emkpi/Nb1b4a150d85e4cecb7023c42aa04661b> .
+
+</.well-known/genid/emkpi/N4a5044acd2814720bc5d806cc666f4ee> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#ExtWindow> ;
+    rdf:rest </.well-known/genid/emkpi/Nf0c738158bbe405e91a3728eaeb8c7b5> .
+
+</.well-known/genid/emkpi/N4a6b7b1a91594057b5a39f6f366866c7> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#Occupant> ;
+    rdf:rest </.well-known/genid/emkpi/Na8e82946de724f9687514d657c903393> .
+
+</.well-known/genid/emkpi/N4bf311b90f9049a19b4aa636b3978ce7> a owl:Class ;
+    owl:unionOf </.well-known/genid/emkpi/N05ec508de6d54e0997c59b5352d684ec> .
+
+</.well-known/genid/emkpi/N4c66947b3d014e058b6555369c12373a> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/ProcessOntology.owl#hasInfluenceOn> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergySupply> .
+
+</.well-known/genid/emkpi/N4cae2bf8c6a04c5f92525f0d82d51ea2> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasCalculationComponent> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#KPICalculationComponent> .
+
+</.well-known/genid/emkpi/N4d938cc22ab34cf3be910e07149d4662> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#isScheduleOf> ;
+    owl:someValuesFrom <http://schema.org/Event> .
+
+</.well-known/genid/emkpi/N4da7e15d924d4423b5c33b3ba0b1375f> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#suppliesTo> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyDemand> .
+
+</.well-known/genid/emkpi/N4e055d5f7a584c2d8a589b1bc0702b86> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyFacility> ;
+    rdf:rest </.well-known/genid/emkpi/Nba13012efa0048a58790e13caee9ed13> .
+
+</.well-known/genid/emkpi/N4fc8766c4f274220813fbb5434338ea9> a owl:Restriction ;
+    owl:onDataRange xsd:string ;
+    owl:onProperty dcterms:title ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N4fec4110ac704a35b3c27dce45019c54> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#BuildingThing> ;
+    rdf:rest </.well-known/genid/emkpi/N637ff1a137ac4706b16adf9a8bb7df4e> .
+
+</.well-known/genid/emkpi/N513c5e29b34148fe80deba3a0df1fa57> a owl:Class ;
+    owl:intersectionOf </.well-known/genid/emkpi/Ne714ef781fc24081be204769addd8392> .
+
+</.well-known/genid/emkpi/N51d00c3832634aeb8ee38838a41f157c> a owl:Restriction ;
+    owl:onClass time:Instant ;
+    owl:onProperty time:hasEnd ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N532d828a24cd4f9285d79ddadab06b8b> a owl:Class ;
+    owl:unionOf </.well-known/genid/emkpi/Ne6cd13b08edc4a3ca54a110a5b93cb25> .
+
+</.well-known/genid/emkpi/N54b7278d6382404f90e5805f9c9a5761> rdf:first <http://purl.oclc.org/NET/ssnx/ssn#Observation> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/N552f647ada2c4569bec5f26f38cbfb6f> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyCost> ;
+    rdf:rest </.well-known/genid/emkpi/N40d3bedddaf14daa8a3ef3d749478d02> .
+
+</.well-known/genid/emkpi/N5563fa5ed4f94d0285de3e6b4cd7608b> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#producesEnergy> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#EnergyProduction> .
+
+</.well-known/genid/emkpi/N55ffe17c54244fa68ca83ee9744e8520> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#PowerSystemResource> ;
+    rdf:rest </.well-known/genid/emkpi/N970199457ed14cc3ba0e07acb8f787fd> .
+
+</.well-known/genid/emkpi/N5722136178dd4766a9e862fcc10f4bc6> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#providesTo> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#EnergySupplyFromSiteProduction> .
+
+</.well-known/genid/emkpi/N5758be94132844cd8c56f2dfcc36fa0f> a owl:Restriction ;
+    owl:onProperty <http://purl.oclc.org/NET/ssnx/ssn#hasInput> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#DatumSource> .
+
+</.well-known/genid/emkpi/N583d5c2f9bd94e9ab95b25f07ed24587> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/ProcessOntology.owl#hasInfluenceOn> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#IndoorComfort> .
+
+</.well-known/genid/emkpi/N585a48e0c5ef4952ae461024019ef1ff> a owl:Restriction ;
+    owl:onDataRange xsd:string ;
+    owl:onProperty <http://www.w3.org/2003/01/geo/wgs84_pos#long> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N588db03eac3f45f6935a74e823dbed94> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#Floor> ;
+    rdf:rest </.well-known/genid/emkpi/Nc4a72bface044d0b8fb583491bd0c0b4> .
+
+</.well-known/genid/emkpi/N589977148c9a404fb4332c0c82956d67> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/ProcessOntology.owl#hasInfluenceOn> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#EnergyProduction> .
+
+</.well-known/genid/emkpi/N5996bd7f0e3544d0ac2dc362258a75c3> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#experiences> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Weather> .
+
+</.well-known/genid/emkpi/N59c9b3a596b5411c963ef79b92304ff5> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#District> ;
+    rdf:rest </.well-known/genid/emkpi/N080dcf454be4414a85d14fad181e9572> .
+
+</.well-known/genid/emkpi/N59d98f28428a46b290f9ef09de370ee6> a owl:Restriction ;
+    owl:onClass dcterms:Location ;
+    owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N5a5aeedcbf4246138c4d0d069844b1b0> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#consumesEnergyType> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyType> .
+
+</.well-known/genid/emkpi/N5b745ed3eec44df4bfa1bbaedeb1d93d> a owl:Restriction ;
+    owl:onClass dcterms:Location ;
+    owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N5dc2985c51ee48a5a291a686dc7ed84e> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#isDisaggregationOf> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#StrategicKPI> .
+
+</.well-known/genid/emkpi/N5e172cc400c14cb790be8589eb2d5dd2> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#EnvironmentalParameter> ;
+    rdf:rest </.well-known/genid/emkpi/Nac7abd80f29048059b03aebe224658e8> .
+
+</.well-known/genid/emkpi/N5e6d12a8733a433797e2599413a7c735> rdf:first <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/N5e7dc552b70445f08c271c14298eea12> rdf:first </.well-known/genid/emkpi/N678da297118d4bbd83d158a0f04c6063> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/N5ecf6196f21c421b8c756ee51e3857a3> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyParameter> ;
+    rdf:rest </.well-known/genid/emkpi/Nbb01929235fe41b08ea4d33aeafbf7d3> .
+
+</.well-known/genid/emkpi/N60c07e17b8284ed69d5cb9d4dc862e29> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/ProcessOntology.owl#hasInfluenceOn> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#OccupantBehavior> .
+
+</.well-known/genid/emkpi/N6132202bac3f45869f4ebb7b23c0c992> a owl:Restriction ;
+    owl:onClass <http://identifiers.org/mamo/Mathematical_model> ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasCalculationModel> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N625217facc934cc99dbc0187b565f0b4> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#WeatherForecast> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/N6263622ef687438f9bb269acc94c62f7> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyTariff> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/N637ff1a137ac4706b16adf9a8bb7df4e> rdf:first </.well-known/genid/emkpi/N8d0c47397e0d4e0293c76d91583fc4c0> ;
+    rdf:rest </.well-known/genid/emkpi/Ncde04bce0f474570a7643e0a091a79a5> .
+
+</.well-known/genid/emkpi/N66182dafe54b4f1dac4c6ad0edb47d56> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasExtWall> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#ExtWall> .
+
+</.well-known/genid/emkpi/N6677156a9898483cb9b50192b0416605> a owl:Class ;
+    owl:intersectionOf </.well-known/genid/emkpi/Nfb3d97a67f51463a8a026ec1e54b884f> .
+
+</.well-known/genid/emkpi/N678da297118d4bbd83d158a0f04c6063> a owl:Class ;
+    owl:unionOf </.well-known/genid/emkpi/N7770c1ce10804de8aa777a364c08bf79> .
+
+</.well-known/genid/emkpi/N67c002009b964e8daaef8312deb3effe> a owl:Class ;
+    owl:unionOf </.well-known/genid/emkpi/Nc3b0487d09384d23ae9fcfdc3547f6fb> .
+
+</.well-known/genid/emkpi/N68388333677f4a2488b9918a4e5cfffc> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasExtWindow> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#ExtWindow> .
+
+</.well-known/genid/emkpi/N684b981b64e34588a0fec382492ea5fb> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyTariff> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/N691c3750660d4edb9b527d13975a8977> a owl:Restriction ;
+    owl:onClass <http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure> ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasUnit> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N6a562b4bc92d4ca1b1f0d60eaf1d44a1> a owl:Restriction ;
+    owl:onClass <http://energy.linkeddata.es/em-kpi/ontology#KPIEvaluatedObject> ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasAssociatedObject> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N6a96cdc5d93044e98c6038ac0a85219d> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasRoof> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#Roof> .
+
+</.well-known/genid/emkpi/N6c7507672d71490d92e3969fd15d0e3e> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyGain> ;
+    rdf:rest </.well-known/genid/emkpi/N1c3cd25947824d8ebdef45b644451bb6> .
+
+</.well-known/genid/emkpi/N6d0a2f06c02e45ed8f1d5d7fab871ab3> a owl:Class ;
+    owl:unionOf </.well-known/genid/emkpi/Nd3533015cf724be092a0f4241141b76a> .
+
+</.well-known/genid/emkpi/N70527130ed6348198c3678ecd21b5f11> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasOccupancyParameter> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/ProcessOntology.owl#OccupancyParameter> .
+
+</.well-known/genid/emkpi/N7123bdb8643047a991e7472906ceca6e> a owl:Restriction ;
+    owl:onClass <http://energy.linkeddata.es/em-kpi/ontology#BuildingType> ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasBuildingType> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N715d9e32c68d4b16bee672b4d6a81c93> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasMathML> ;
+    owl:someValuesFrom xsd:string .
+
+</.well-known/genid/emkpi/N71c8f03e71284671a4214b9377f1cd1d> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#EnergyStorage> ;
+    rdf:rest </.well-known/genid/emkpi/Ncf10f1b25cbc42268035932920e27153> .
+
+</.well-known/genid/emkpi/N7503282723004be181cc0fdbffad2ecf> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#EnergyProduction> ;
+    rdf:rest </.well-known/genid/emkpi/Nea3a611cc99c49a49968c2a2afa7ca6f> .
+
+</.well-known/genid/emkpi/N761b24c9fcde45fc8c81529be9eb41f7> rdf:first xsd:string ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/N7770c1ce10804de8aa777a364c08bf79> rdf:first </.well-known/genid/emkpi/N952fc52e255f4533abb17ee5436c4034> ;
+    rdf:rest </.well-known/genid/emkpi/N3672ee77ddca4e0fba7628c865331fbe> .
+
+</.well-known/genid/emkpi/N7784d758403d464792766477a7292e4b> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#consumesEnergy> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyDemand> .
+
+</.well-known/genid/emkpi/N791d00adc45843f997cec30b780525d0> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/ProcessOntology.owl#hasInfluenceOn> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#EnergyForecast> .
+
+</.well-known/genid/emkpi/N7a60ce8121c44aceb74debfc01b71773> a owl:Restriction ;
+    owl:onProperty <http://schema.org/duration> ;
+    owl:someValuesFrom xsd:duration .
+
+</.well-known/genid/emkpi/N7ab7a82b1d354823bb9d5ce384232762> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#contains> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#BuildingEquipment> .
+
+</.well-known/genid/emkpi/N7d82108a868547b492a19dea046d891b> a owl:Class ;
+    owl:unionOf </.well-known/genid/emkpi/Ne43d12a9101a4fbdb6dbb1f830edbf74> .
+
+</.well-known/genid/emkpi/N7edd6745a04749c8a84cdf68d1f7825a> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/ProcessOntology.owl#hasInfluenceOn> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyDemand> .
+
+</.well-known/genid/emkpi/N7efe702ea57140c59c8dc050933d4637> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#containsAssumption> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#Assumption> .
+
+</.well-known/genid/emkpi/N7f64db88200140eaad0cfc037732cd6d> a owl:Restriction ;
+    owl:onClass <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Zone> ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#hasAssociatedZone> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N80ac3c5631894ed48429a111314baa28> a owl:Class ;
+    owl:intersectionOf </.well-known/genid/emkpi/N55ffe17c54244fa68ca83ee9744e8520> .
+
+</.well-known/genid/emkpi/N810205dbe666426a96417d14b3be785c> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#isAssociatedObjectOf> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#KPICalculation> .
+
+</.well-known/genid/emkpi/N8693652999f047f092452f9d29f167f7> a owl:Restriction ;
+    owl:onClass <http://energy.linkeddata.es/em-kpi/ontology#KPIValue> ;
+    owl:onProperty <http://purl.oclc.org/NET/ssnx/ssn#hasOutput> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N8a0196854122466096dab2c02ec815cb> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#hasFloor> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#Floor> .
+
+</.well-known/genid/emkpi/N8a1e3a4e54df42539d9d17fe72348c22> a owl:Restriction ;
+    owl:onProperty <http://purl.oclc.org/NET/ssnx/ssn#hasProperty> ;
+    owl:someValuesFrom <http://purl.oclc.org/NET/ssnx/ssn#Property> .
+
+</.well-known/genid/emkpi/N8bcaea69017a4be7980c0949871d4c86> a owl:Class ;
+    owl:intersectionOf </.well-known/genid/emkpi/N3d245e555a44428381c265a90b208573> .
+
+</.well-known/genid/emkpi/N8d0c47397e0d4e0293c76d91583fc4c0> a owl:Class ;
+    owl:unionOf </.well-known/genid/emkpi/Nff3d4589524f457e964d3cbd2b00b5dd> .
+
+</.well-known/genid/emkpi/N8e5949aa0fbd4d5ba3763d6ebdbc4de9> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#isFeatureOfInterestOf> ;
+    owl:someValuesFrom <http://purl.oclc.org/NET/ssnx/ssn#Observation> .
+
+</.well-known/genid/emkpi/N8e79629d7c164b3c8e0d94a4d6d0f1f6> a owl:Restriction ;
+    owl:onClass time:Interval ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasEvaluationTimeStep> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N90cc9b796bf049e380dfb28fb146694f> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#actsTo> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyConsumerFacility> .
+
+</.well-known/genid/emkpi/N912242fef94b4a9dad26c05812ccc8f9> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasDeterminant> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#EnergySupplyFromExternalGrid> .
+
+</.well-known/genid/emkpi/N92371c02102747c2b1ab3921b93bd54d> a owl:Restriction ;
+    owl:onClass time:TemporalEntity ;
+    owl:onProperty <http://purl.oclc.org/NET/ssnx/ssn#observationSamplingTime> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N924f5f1c0806451da00e1d604c7b9a01> a owl:Restriction ;
+    owl:onDataRange xsd:dateTime ;
+    owl:onProperty time:inXSDDateTime ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N927e0371fa224b0682754cd0bcd410a5> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#ExtWall> ;
+    rdf:rest </.well-known/genid/emkpi/N4a5044acd2814720bc5d806cc666f4ee> .
+
+</.well-known/genid/emkpi/N92b505f2226a47e5bd5ba231f023ca87> a owl:Class ;
+    owl:unionOf </.well-known/genid/emkpi/N15defba3f9e0435ab961165f3cb67f70> .
+
+</.well-known/genid/emkpi/N93a038b60c954290a8506368c9050db5> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#PowerEquipment> ;
+    rdf:rest </.well-known/genid/emkpi/Na10e1ff39f5a42728968d262d9197a3b> .
+
+</.well-known/genid/emkpi/N952fc52e255f4533abb17ee5436c4034> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#deliversEnergy> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergySupply> .
+
+</.well-known/genid/emkpi/N970199457ed14cc3ba0e07acb8f787fd> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#Equipment> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/N98db611e0eec428588ad4441b7d515d6> rdf:first </.well-known/genid/emkpi/N7784d758403d464792766477a7292e4b> ;
+    rdf:rest </.well-known/genid/emkpi/Na5c3bbf277f1407487105b4f9335111e> .
+
+</.well-known/genid/emkpi/N99edfca76f624564a04bc8f445e15135> a owl:Restriction ;
+    owl:onClass <http://energy.linkeddata.es/em-kpi/ontology#KPI> ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#isCalculationOf> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N9b114b88342d47e19ee9e04fbef8c4b1> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#DatumSource> ;
+    rdf:rest </.well-known/genid/emkpi/Nc7f04cf635b54b30b5adb01efa23c779> .
+
+</.well-known/genid/emkpi/N9b9cc99c885549be8559d875b1cfbf19> a owl:Restriction ;
+    owl:onProperty <http://schema.org/event> ;
+    owl:someValuesFrom <http://schema.org/Event> .
+
+</.well-known/genid/emkpi/N9bf82ff753604256b9de0080667ab03a> a owl:Class ;
+    owl:unionOf </.well-known/genid/emkpi/Ncd0805d0f7734a4cb95413c48124d93d> .
+
+</.well-known/genid/emkpi/N9c3ee05a3e9742edbb6e76d96a94a626> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasForecast> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#WeatherForecast> .
+
+</.well-known/genid/emkpi/N9dad0b5a1e5a43bf8f6297d37f9eb271> a owl:Restriction ;
+    owl:onClass dcterms:Location ;
+    owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/N9deca32898a34131bd4ef3151e4b5792> a owl:Class ;
+    owl:unionOf </.well-known/genid/emkpi/N59c9b3a596b5411c963ef79b92304ff5> .
+
+</.well-known/genid/emkpi/N9e71916fa9d54b66914c94b3cd559858> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasAssociatedKPI> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#KPI> .
+
+</.well-known/genid/emkpi/N9f699ef3de9a4f7eb956014cf14e6960> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#providesTo> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#DatumSource> .
+
+</.well-known/genid/emkpi/Na10e1ff39f5a42728968d262d9197a3b> rdf:first </.well-known/genid/emkpi/N29a1c3e0e2944b7aaf07491fc983b1e0> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/Na1510013877a444891157fb0035202d0> a owl:Restriction ;
+    owl:onClass <http://purl.oclc.org/NET/ssnx/ssn#Property> ;
+    owl:onProperty <http://purl.oclc.org/NET/ssnx/ssn#observedProperty> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/Na504426a56cf459595cfd7e1eeeff166> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#producesEnergyType> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyType> .
+
+</.well-known/genid/emkpi/Na5487d93ef524131939307a538054bbc> a owl:Restriction ;
+    owl:onDataRange xsd:string ;
+    owl:onProperty <http://www.w3.org/2003/01/geo/wgs84_pos#alt> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/Na5c3bbf277f1407487105b4f9335111e> rdf:first </.well-known/genid/emkpi/N0dd3c09421a6423dbb69698b59ebf375> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/Na77ecac5edaf4a098ed327369ccd88d1> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#isAssociatedObjectOf> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#KPICalculation> .
+
+</.well-known/genid/emkpi/Na8e82946de724f9687514d657c903393> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Building> ;
+    rdf:rest </.well-known/genid/emkpi/N2c09e2fd82e6445c85c01e603e3162dd> .
+
+</.well-known/genid/emkpi/Na8fbdc3c74154f4d9484da64b9c4c051> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#consumesEnergy> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyDemand> .
+
+</.well-known/genid/emkpi/Na955fdd1611a4d5aaae3e945af2fd5ae> a owl:Restriction ;
+    owl:onClass <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Area> ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasArea> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/Nab44f1fa8c144f26a3c01f82f805ec91> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#District> ;
+    rdf:rest </.well-known/genid/emkpi/N4a6b7b1a91594057b5a39f6f366866c7> .
+
+</.well-known/genid/emkpi/Nab7c5fe319744191a4a926baec18e46e> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#EnergySupplyFromStorage> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/Nac7abd80f29048059b03aebe224658e8> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#EquipmentParameter> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/Naccfab4ca67a4569b48010a84beab81e> rdf:first <http://purl.oclc.org/NET/ssnx/ssn#ObservationValue> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/Naf60589bccbc464fb98164d04e8b917a> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Weather> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/Nb11c464daeb043dbab4dcf148bc6254c> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#contains> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#GeneratingUnit> .
+
+</.well-known/genid/emkpi/Nb1b4a150d85e4cecb7023c42aa04661b> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergySupply> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/Nb220d96e832f4173899ee1513b889d61> a owl:Class ;
+    owl:intersectionOf </.well-known/genid/emkpi/N4fec4110ac704a35b3c27dce45019c54> .
+
+</.well-known/genid/emkpi/Nb40ea2bf8a1540a1806e1266644c8ebd> rdf:first <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/Nb47f5b78e3db4ee7a6522e728afe7962> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#isFeatureOfInterestOf> ;
+    owl:someValuesFrom <http://purl.oclc.org/NET/ssnx/ssn#Observation> .
+
+</.well-known/genid/emkpi/Nb57876eb37be47719da6e18221867b36> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#producesEnergy> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#EnergyProduction> .
+
+</.well-known/genid/emkpi/Nb57cc74bf8a2427aaffdb3fa80fedc53> rdf:first </.well-known/genid/emkpi/N1bf9e1d652b64ff8962bd8f6a90d8011> ;
+    rdf:rest </.well-known/genid/emkpi/Nde52aa598ca747f99215142c96dd49e5> .
+
+</.well-known/genid/emkpi/Nb5cc4a7b5995463f9ea973e628fcf863> a owl:Restriction ;
+    owl:onClass <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#U-value> ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#containsU-value> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/Nb5f6f09da2e7432fbb0568b291d74845> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/ProcessOntology.owl#hasInfluenceOn> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyCost> .
+
+</.well-known/genid/emkpi/Nb6b475884a9c45de821e34851164d4be> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergySupply> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/Nb6bd8b81f6654a1ab405f0501dfc5bed> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasDisaggregation> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#TacticalKPI> .
+
+</.well-known/genid/emkpi/Nb6ecdf08847c480ca5d1585e9e342d2c> rdf:first <http://purl.oclc.org/NET/ssnx/ssn#ObservationValue> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/Nb766efd79a3444b88dc3d38d25bc0bc2> rdf:first </.well-known/genid/emkpi/N1c29c0f5d3e24b3a8e8b33e8baced035> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/Nb7e9626582f142f19e8b41c534d27027> a owl:Class ;
+    owl:unionOf </.well-known/genid/emkpi/N4324340408a2466c9fe9cf81e87b8015> .
+
+</.well-known/genid/emkpi/Nb8b08b273d1a435099e6fb779e40e3ae> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasForecast> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#EnergyDemandForecast> .
+
+</.well-known/genid/emkpi/Nb95f88f6975f4fcba25b36a9d17311b2> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#contains> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Zone> .
+
+</.well-known/genid/emkpi/Nb9ef83bf123d46f8bbd961ad65ac41fe> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#storesEnergyType> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyType> .
+
+</.well-known/genid/emkpi/Nba13012efa0048a58790e13caee9ed13> rdf:first </.well-known/genid/emkpi/Nc095a7e4c5db49249d6335e27093246a> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/Nbb01929235fe41b08ea4d33aeafbf7d3> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/ProcessOntology.owl#OccupancyParameter> ;
+    rdf:rest </.well-known/genid/emkpi/Ncfae8df6e2db4e93870234aafe33ae82> .
+
+</.well-known/genid/emkpi/Nbd090fb98e2c4db1bc650bdb9c26dd1a> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#isAssociatedObjectOf> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#KPICalculation> .
+
+</.well-known/genid/emkpi/Nbf65c9e464ba4cd598e781629503f51f> a owl:Restriction ;
+    owl:onProperty <http://purl.oclc.org/NET/ssnx/ssn#observationResult> ;
+    owl:someValuesFrom <http://purl.oclc.org/NET/ssnx/ssn#ObservationValue> .
+
+</.well-known/genid/emkpi/Nc01e73b804d540df8e72f89485a6d337> a owl:Class ;
+    owl:intersectionOf </.well-known/genid/emkpi/N93a038b60c954290a8506368c9050db5> .
+
+</.well-known/genid/emkpi/Nc095a7e4c5db49249d6335e27093246a> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#producesEnergy> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#EnergyProduction> .
+
+</.well-known/genid/emkpi/Nc0d79a38e0e942ec9316052a42c76fca> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#isAssociatedObjectOf> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#KPICalculation> .
+
+</.well-known/genid/emkpi/Nc27dba3988db420882501327176c3346> a owl:Restriction ;
+    owl:onClass <http://energy.linkeddata.es/em-kpi/ontology#WindDirection> ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#hasDirection> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/Nc3b0487d09384d23ae9fcfdc3547f6fb> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#EnergyProduction> ;
+    rdf:rest </.well-known/genid/emkpi/Nd9a79a0d582d40349aa93f6031948870> .
+
+</.well-known/genid/emkpi/Nc4a72bface044d0b8fb583491bd0c0b4> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#Room> ;
+    rdf:rest </.well-known/genid/emkpi/Nf6088a23caf3413bb8d23ce5da0ce406> .
+
+</.well-known/genid/emkpi/Nc73fc023888d4b2c8d5de226dedc5195> a owl:Restriction ;
+    owl:onClass <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Volume> ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasAirConditionedVolume> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/Nc7f04cf635b54b30b5adb01efa23c779> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#EnergyStorage> ;
+    rdf:rest </.well-known/genid/emkpi/N49be0afcf0fc42f89423f6bf4cd10f63> .
+
+</.well-known/genid/emkpi/Nc8cb29ef1f414f62bec22c12f17544ab> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#isAssociatedObjectOf> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#KPICalculation> .
+
+</.well-known/genid/emkpi/Ncb64d6f74e58433380174d81d99d34d1> a owl:Class ;
+    owl:intersectionOf </.well-known/genid/emkpi/N4e055d5f7a584c2d8a589b1bc0702b86> .
+
+</.well-known/genid/emkpi/Ncbbd75425d2f459085727afb78895a1b> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#hasSchedule> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Schedule> .
+
+</.well-known/genid/emkpi/Ncd0195e00a29435db9fd628a64f8f84c> a owl:Class ;
+    owl:unionOf </.well-known/genid/emkpi/N2861b21f6d224dcbae6e39138c7fe3b1> .
+
+</.well-known/genid/emkpi/Ncd0805d0f7734a4cb95413c48124d93d> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#EnergyProduction> ;
+    rdf:rest </.well-known/genid/emkpi/Nd03e099ded794250bbf0e8bd877d080e> .
+
+</.well-known/genid/emkpi/Ncde04bce0f474570a7643e0a091a79a5> rdf:first </.well-known/genid/emkpi/N29418a862e4f4e31a8e8cf55ef6e4145> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/Nce51d5aefaa74d78826846c30f3d56da> a owl:Restriction ;
+    owl:onDataRange xsd:string ;
+    owl:onProperty <http://schema.org/address> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/Ncf10f1b25cbc42268035932920e27153> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyGain> ;
+    rdf:rest </.well-known/genid/emkpi/Nb6b475884a9c45de821e34851164d4be> .
+
+</.well-known/genid/emkpi/Ncf3fdb7c864e47be9fb0bb1cd6973876> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#EnergyForecast> ;
+    rdf:rest </.well-known/genid/emkpi/N625217facc934cc99dbc0187b565f0b4> .
+
+</.well-known/genid/emkpi/Ncfae8df6e2db4e93870234aafe33ae82> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#BuildingParameter> ;
+    rdf:rest </.well-known/genid/emkpi/N5e172cc400c14cb790be8589eb2d5dd2> .
+
+</.well-known/genid/emkpi/Ncfe03f91458b4abd857ba7348055665d> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasCalculation> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#KPICalculation> .
+
+</.well-known/genid/emkpi/Nd022b7670bec4d2abafe2d4edf1172d3> a owl:Restriction ;
+    owl:onClass <http://energy.linkeddata.es/em-kpi/ontology#EquipmentType> ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasEquipmentType> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/Nd03e099ded794250bbf0e8bd877d080e> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyDemand> ;
+    rdf:rest </.well-known/genid/emkpi/Naf60589bccbc464fb98164d04e8b917a> .
+
+</.well-known/genid/emkpi/Nd17167e6efdc4047a2a502c9bc01def8> a owl:Restriction ;
+    owl:onClass <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#U-value> ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#containsU-value> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/Nd1bbbc8b486146aabd30b61926faba14> a owl:Class ;
+    owl:unionOf </.well-known/genid/emkpi/N9b114b88342d47e19ee9e04fbef8c4b1> .
+
+</.well-known/genid/emkpi/Nd1ef333fed6a416da035f8b2842b2dc3> rdf:first </.well-known/genid/emkpi/N0c70c2822a39437f98c36bd917b1ade4> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/Nd32c6a85fedd43a193c5480f8b45a5cb> a owl:Restriction ;
+    owl:onClass <http://energy.linkeddata.es/em-kpi/ontology#Equation> ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#containsEquation> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/Nd3533015cf724be092a0f4241141b76a> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#ExtWall> ;
+    rdf:rest </.well-known/genid/emkpi/N279ba671062446be9966a6bbda30a443> .
+
+</.well-known/genid/emkpi/Nd470533c9eb649dd96760e1bdefe9e6b> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#TacticalKPI> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/Nd9a79a0d582d40349aa93f6031948870> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#EnergyStorage> ;
+    rdf:rest </.well-known/genid/emkpi/N54b7278d6382404f90e5805f9c9a5761> .
+
+</.well-known/genid/emkpi/Ndd985a57f4104e1c982365abb77ad96b> a owl:Restriction ;
+    owl:onProperty <http://schema.org/attendee> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#Occupant> .
+
+</.well-known/genid/emkpi/Ndde8610a8a604d4588929f518342847f> a owl:Class ;
+    owl:intersectionOf </.well-known/genid/emkpi/N11d99eb990f840d385075d6267cbdcb7> .
+
+</.well-known/genid/emkpi/Nde52aa598ca747f99215142c96dd49e5> rdf:first </.well-known/genid/emkpi/N585a48e0c5ef4952ae461024019ef1ff> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/Ndf28aee292e5443ca333e248b8fe3f3d> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#storesEnergy> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#EnergyStorage> .
+
+</.well-known/genid/emkpi/Ne021c2d5a3d84a86ad0970f1c17cc4f6> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#consumesEnergy> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyDemand> .
+
+</.well-known/genid/emkpi/Ne0e47566c518420283904e00b97ee35d> a owl:Class ;
+    owl:unionOf </.well-known/genid/emkpi/Ncf3fdb7c864e47be9fb0bb1cd6973876> .
+
+</.well-known/genid/emkpi/Ne13a1b3016224aea8d6fbb3fd1cb3e18> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#contains> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#EnergyConsumer> .
+
+</.well-known/genid/emkpi/Ne4133ee91722449ba57ea0b384736c18> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#EnergySupplyFromExternalGrid> ;
+    rdf:rest </.well-known/genid/emkpi/N2b316f5c89dd444b9d7c2e9a2ddd6b92> .
+
+</.well-known/genid/emkpi/Ne43d12a9101a4fbdb6dbb1f830edbf74> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#BuildingEquipment> ;
+    rdf:rest </.well-known/genid/emkpi/N267d974ce0124c6787a626cbd7bb8761> .
+
+</.well-known/genid/emkpi/Ne5cd2eb415764849919ccaa7659dd49a> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasBehavior> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#OccupantBehavior> .
+
+</.well-known/genid/emkpi/Ne6cd13b08edc4a3ca54a110a5b93cb25> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#KPIValue> ;
+    rdf:rest </.well-known/genid/emkpi/Naccfab4ca67a4569b48010a84beab81e> .
+
+</.well-known/genid/emkpi/Ne6e4393339d1442ca5e6605e7e423c42> a owl:Restriction ;
+    owl:onClass <http://energy.linkeddata.es/em-kpi/ontology#KPI> ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#isMathematicalModelOf> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/Ne714ef781fc24081be204769addd8392> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#PowerEquipment> ;
+    rdf:rest </.well-known/genid/emkpi/N19dba99b828b4b47a0ad6e5263d21c73> .
+
+</.well-known/genid/emkpi/Ne86938d1c6134203b03325615e171e15> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#isDisaggregationOf> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#TacticalKPI> .
+
+</.well-known/genid/emkpi/Ne937df90a15243558d7f56b6237dd025> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#contains> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#PowerSystemResource> .
+
+</.well-known/genid/emkpi/Nea3a611cc99c49a49968c2a2afa7ca6f> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#EnergyStorage> ;
+    rdf:rest </.well-known/genid/emkpi/N552f647ada2c4569bec5f26f38cbfb6f> .
+
+</.well-known/genid/emkpi/Nea8d5d727d424e6fa0f1865ee62395b4> a owl:Restriction ;
+    owl:onClass <http://www.w3.org/2003/01/geo/wgs84_pos#Point> ;
+    owl:onProperty <http://schema.org/geo> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+</.well-known/genid/emkpi/Nef35944c06454a91a1b04d9485a831eb> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#Floor> ;
+    rdf:rest () .
+
+</.well-known/genid/emkpi/Nf0c738158bbe405e91a3728eaeb8c7b5> rdf:first <http://energy.linkeddata.es/em-kpi/ontology#Roof> ;
+    rdf:rest </.well-known/genid/emkpi/N588db03eac3f45f6935a74e823dbed94> .
+
+</.well-known/genid/emkpi/Nf2aa6dc576424f7ba6d2a69af9168276> rdf:first xsd:float ;
+    rdf:rest </.well-known/genid/emkpi/N42126ed01a8e4f18affab18d35484bd2> .
+
+</.well-known/genid/emkpi/Nf2cbfaad11074e70b6887a9dba82dd92> a owl:Class ;
+    owl:intersectionOf </.well-known/genid/emkpi/N3f8b0f40de16405094603e8f7505e74d> .
+
+</.well-known/genid/emkpi/Nf2efe65528f9452d8a1026b635ef2198> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#contains> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#BuildingThing> .
+
+</.well-known/genid/emkpi/Nf48298dfc5a5483985da7474fbb18f13> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#providesTo> ;
+    owl:someValuesFrom <http://energy.linkeddata.es/em-kpi/ontology#EnergySupplyFromStorage> .
+
+</.well-known/genid/emkpi/Nf5d2a77d4940404c89a1cc752180fc55> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#contains> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Building> .
+
+</.well-known/genid/emkpi/Nf6088a23caf3413bb8d23ce5da0ce406> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#BuildingStorey> ;
+    rdf:rest </.well-known/genid/emkpi/N24599b16664a45fcb032410aa293f4a2> .
+
+</.well-known/genid/emkpi/Nf723770699894885be37353c02d8ecf8> a owl:Restriction ;
+    owl:onProperty <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#consumesEnergy> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyDemand> .
+
+</.well-known/genid/emkpi/Nf9a6e861c0384636a2b02d07d452ae7b> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#hasDeterminant> ;
+    owl:someValuesFrom <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyGain> .
+
+</.well-known/genid/emkpi/Nfaf390d892f74c95ba16a75526ccee81> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#containsVariable> ;
+    owl:someValuesFrom <http://identifiers.org/mamo/Variable> .
+
+</.well-known/genid/emkpi/Nfb3d97a67f51463a8a026ec1e54b884f> rdf:first <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyFacility> ;
+    rdf:rest </.well-known/genid/emkpi/Nd1ef333fed6a416da035f8b2842b2dc3> .
+
+</.well-known/genid/emkpi/Nfccf405981cd426794491fea6291f816> a owl:Restriction ;
+    owl:onProperty <http://energy.linkeddata.es/em-kpi/ontology#isFeatureOfInterestOf> ;
+    owl:someValuesFrom <http://purl.oclc.org/NET/ssnx/ssn#Observation> .
+
+</.well-known/genid/emkpi/Nff3d4589524f457e964d3cbd2b00b5dd> rdf:first </.well-known/genid/emkpi/Ne021c2d5a3d84a86ad0970f1c17cc4f6> ;
+    rdf:rest </.well-known/genid/emkpi/N3268911453ae4951971257e9542d3010> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#EnergyConsumer> a owl:Class ;
+    rdfs:label "EnergyConsumer"^^xsd:string ;
+    rdfs:comment "Energy consumer is the power unit that consumes energy in district microgrid."@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N0cb622000b7e41aa85c77c00877eea68>,
+        </.well-known/genid/emkpi/N0d68a67c61804c1499a016d5b7ded0db> ;
+    owl:equivalentClass </.well-known/genid/emkpi/N513c5e29b34148fe80deba3a0df1fa57> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#EnergyDemandForecast> a owl:Class ;
+    rdfs:label "EnergyDemandForecast"@en ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#EnergyForecast> ;
+    owl:disjointWith <http://energy.linkeddata.es/em-kpi/ontology#EnergyProductionForecast> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#EquipmentType> a owl:Class ;
+    rdfs:label "EquipmentType"@en ;
+    rdfs:comment "Equipment type describes the type of an equipment"@en ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#EntityType> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#PhotovoltaicGeneratingUnit> a owl:Class ;
+    rdfs:label "PhotovoltaicGeneratingUnit"^^xsd:string ;
+    rdfs:comment "The generating unit produces energy with solar energy, photovoltaic panels."@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N10c4667955c6462ca4ff08799c341ae8>,
+        <http://energy.linkeddata.es/em-kpi/ontology#RenewableGeneratingUnit> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#PowerDeliveryUnit> a owl:Class ;
+    rdfs:label "PowerDeliveryUnit"^^xsd:string ;
+    rdfs:comment "Power devices that are capable of delivering electric power to the household"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N2dae4b134e4e4e70a3295997fdbcd6b5> ;
+    owl:equivalentClass </.well-known/genid/emkpi/Nc01e73b804d540df8e72f89485a6d337> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#Stakeholder> a owl:Class ;
+    rdfs:label "Stakeholder"@en ;
+    rdfs:comment "The stakeholder in district or building that has performance goals to be achieved"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N11cecfae8d154039939a21073b285ba0> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#VisualComfort> a owl:Class ;
+    rdfs:label "VisualComfort"@en ;
+    rdfs:comment "The visual comfort describes the comfort related to light condition"@en ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#IndoorComfort> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#actsTo> a owl:ObjectProperty ;
+    rdfs:label "actsTo"@en ;
+    rdfs:comment "Relation linking the Occupant Behavior and the Energy Consumer Faility it acts"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#OccupantBehavior> ;
+    rdfs:range <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyFacility> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isActedBy> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#attendeeOf> a owl:ObjectProperty ;
+    rdfs:label "attendeeOf"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#composes> a owl:ObjectProperty ;
+    rdfs:label "composes"@en ;
+    rdfs:comment "Relation linking the Power Equipment and Equipment Container."@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#PowerEquipment> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#EquipmentContainer> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isComposedBy> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#containsAssumption> a owl:ObjectProperty ;
+    rdfs:label "containsAssumption"@en ;
+    rdfs:comment "The assumption of the mathematical model for KPI calculation"@en ;
+    rdfs:domain <http://identifiers.org/mamo/Mathematical_model> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#Assumption> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isAssumptionOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#containsConstant> a owl:ObjectProperty ;
+    rdfs:label "containsConstant"@en ;
+    rdfs:comment "The constant in the mathematical model for KPI calculation"@en ;
+    rdfs:domain <http://identifiers.org/mamo/Mathematical_model> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#UniversalConstant> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isConstantOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#containsVariable> a owl:ObjectProperty ;
+    rdfs:label "containsVariable"@en ;
+    rdfs:comment "The variable of the mathematical model for KPI calculation"@en ;
+    rdfs:domain <http://identifiers.org/mamo/Mathematical_model> ;
+    rdfs:range <http://identifiers.org/mamo/Variable> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isVariableOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#deliversEnergyType> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "deliversEnergyType"@en ;
+    rdfs:comment "Relation linking the power delivery system or equipment to the Energy Type it delivers"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#PowerDeliveryUnit> ;
+    rdfs:range <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyType> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#energyTypeDeliveredBy> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#energyDeliveredBy> a owl:ObjectProperty ;
+    rdfs:label "energyDeliveredBy"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#energyTypeDeliveredBy> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "energyTypeDeliveredBy"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#eventOf> a owl:ObjectProperty ;
+    rdfs:label "eventOf"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#experiences> a owl:ObjectProperty ;
+    rdfs:label "experiences"@en ;
+    rdfs:comment "Relation linking the District and the Weather it experiences. "@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#District> ;
+    rdfs:range <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Weather> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isExperiencedBy> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#geoPointOf> a owl:ObjectProperty ;
+    rdfs:label "geoPointOf"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasAirConditionedVolume> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasAirConditionedVolume"@en ;
+    rdfs:comment "Relation linking a Building and its air conditioned Volume."@en ;
+    rdfs:domain <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Building> ;
+    rdfs:range <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Volume> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isAirConditionedVolumeOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasArea> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasArea"@en ;
+    rdfs:comment "Relation linking Building and its constructed Area."@en ;
+    rdfs:domain <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Building> ;
+    rdfs:range <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Area> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isAreaOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasAssociatedKPI> a owl:ObjectProperty ;
+    rdfs:label "hasAssociatedKPI"@en ;
+    rdfs:comment "The performance goal of stakeholder has associated key performance indicators to measure the progress towards the goal."@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#PerformanceGoal> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#KPI> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isAssociatedKPIOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasAssociatedObject> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasAssociatedObject"@en ;
+    rdfs:comment "To relate Key Performance Indicators with their evaluated objects."@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#KPICalculation> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#KPIEvaluatedObject> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isAssociatedObjectOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasBehavior> a owl:ObjectProperty ;
+    rdfs:label "hasBehavior"@en ;
+    rdfs:comment "Relation linking an Occupant with its behavior (action to building energy systems)"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#Occupant> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#OccupantBehavior> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isBehaviorOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasBuildingType> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasBuildingType"@en ;
+    rdfs:comment "Relation linking a Building and its functional type"@en ;
+    rdfs:domain <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Building> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#BuildingType> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isBuildingTypeOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasCalculation> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasCalculation"@en ;
+    rdfs:comment "To represent the calculation of key performance indicators"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#KPI> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#KPICalculation> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isCalculationOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasCalculationComponent> a owl:ObjectProperty ;
+    rdfs:label "hasCalculationComponent"@en ;
+    rdfs:comment "Relation linking the KPI Calculation and its needed Calculation Components"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#KPICalculation> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#KPICalculationComponent> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isCalculationComponentOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasCalculationModel> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasCalculationModel"@en ;
+    rdfs:comment "To represent the mathematical model for KPI calculation"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#KPICalculation> ;
+    rdfs:range <http://identifiers.org/mamo/Mathematical_model> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isCalculationModelOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasEquipmentParameter> a owl:AsymmetricProperty,
+        owl:IrreflexiveProperty,
+        owl:ObjectProperty ;
+    rdfs:label "Relation linking Equipment and its Equipment Parameter"@en,
+        "hasEquipmentParameter"@en ;
+    rdfs:domain <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#Equipment> ;
+    rdfs:range <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#EquipmentParameter> ;
+    owl:inverseOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#isEquipmentParameterOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasEquipmentType> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasEquipmentType"@en ;
+    rdfs:comment "Relation linking an Equipment and its type"@en ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isEquipmentTypeOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasEvaluationTimeStep> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasEvaluationTimeStep"@en ;
+    rdfs:comment "The evaluation time step of KPI calculation"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#KPICalculation> ;
+    rdfs:range time:Interval ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isEvaluationTimeStepOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasExtWall> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasExteriorWall"@en ;
+    rdfs:comment "Relation linking building Zone and its exterior wall"@en ;
+    rdfs:domain <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Zone> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#ExtWall> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isExtWallOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasExtWindow> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasExteriorWindow"@en ;
+    rdfs:comment "Relation linking building Zone and its exterior window"@en ;
+    rdfs:domain <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Zone> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#ExtWindow> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isExtWindowOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasKPIDefinition> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "hasKPIDefinition"@en ;
+    rdfs:comment "The definition of Key Performance Indicator"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#KPI> ;
+    rdfs:range xsd:string .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasMathML> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "hasMathML"@en ;
+    rdfs:comment "The MathML of the equation"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#Equation> ;
+    rdfs:range xsd:string .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasOccupancyParameter> a owl:ObjectProperty ;
+    rdfs:label "hasOccupantParameter"@en ;
+    rdfs:comment "Relation linking Occupant and its related parameter"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#Occupant> ;
+    rdfs:range <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/ProcessOntology.owl#OccupancyParameter> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isOccupancyParameterOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasOccupant> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasOccupant"@en ;
+    rdfs:comment "Relation linking building Zone and its Occupant."@en ;
+    rdfs:domain <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Zone> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#Occupant> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isOccupantOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasPerformanceGoal> a owl:ObjectProperty ;
+    rdfs:label "hasPerformanceGoal"@en ;
+    rdfs:comment "The performance goals of stakeholders."@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#Stakeholder> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#PerformanceGoal> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isPerformanceGoalOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasPhotovoltaicType> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasPhotovoltaicType"@en ;
+    rdfs:comment "Relation linking a PV generating unit to its photovoltaic type"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#PhotovoltaicGeneratingUnit> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#PhotovoltaicType> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isPhotovoltaicTypeOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasRoof> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasRoof"@en ;
+    rdfs:comment "Relation linking building Zone and its Roof"@en ;
+    rdfs:domain <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Zone> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#Roof> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isRoofOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasYearOfConstruction> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "hasYearOfConstruction"@en ;
+    rdfs:comment "Relation linking Building and its constructed year. "@en ;
+    rdfs:domain <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Building> ;
+    rdfs:range xsd:gYear .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isActedBy> a owl:ObjectProperty ;
+    rdfs:label "isActedBy"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isAirConditionedVolumeOf> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isAirConditionedVolumeOf"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isAreaOf> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isAreaOf"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isAssociatedKPIOf> a owl:ObjectProperty ;
+    rdfs:label "isAssociatedKPIOf"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#KPI> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#PerformanceGoal> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isAssumptionOf> a owl:ObjectProperty ;
+    rdfs:label "isAssumptionOf"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isBehaviorOf> a owl:ObjectProperty ;
+    rdfs:label "isBehaviorOf"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isBuildingTypeOf> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isBuildingTypeOf"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isCalculationComponentOf> a owl:ObjectProperty ;
+    rdfs:label "isCalculationComponentOf"@en ;
+    rdfs:comment "Relation linking the KPI needed Calculation Components and its Calculation"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isCalculationModelOf> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isCalculationModelOf"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isComposedBy> a owl:ObjectProperty ;
+    rdfs:label "isComposedBy"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isConstantOf> a owl:ObjectProperty ;
+    rdfs:label "isConstantOf"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isDeterminantOf> a owl:ObjectProperty ;
+    rdfs:label "isDeterminantOf"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isEquipmentTypeOf> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isEquipmentTypeOf"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isEvaluationTimeStepOf> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isEvaluationTimeStepOf"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isExperiencedBy> a owl:ObjectProperty ;
+    rdfs:label "isExperiencedBy"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isExtWallOf> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isExteriorWallOf"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isExtWindowOf> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isExteriorWindowOf"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#ExtWindow> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isForecastOf> a owl:ObjectProperty ;
+    rdfs:label "isForecastOf"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isInputOf> a owl:ObjectProperty ;
+    rdfs:label "isInputOf"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isObservationResultOf> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isObservationResultOf"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isObservationSamplingTimeOf> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isObservationSamplingTimeOf"@en ;
+    rdfs:domain time:Interval .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isObservedPropertyOf> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isObservedPropertyOf"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isOccupancyParameterOf> a owl:ObjectProperty ;
+    rdfs:label "isOccupancyParameterOf"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isOccupantOf> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isOccupantOf"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#Occupant> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isOutputOf> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isOutputOf"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isPerformanceGoalOf> a owl:ObjectProperty ;
+    rdfs:label "isPerformanceGoalOf"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isPhotovoltaicTypeOf> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isPhotovoltaicTypeOf"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isProvidedBy> a owl:ObjectProperty ;
+    rdfs:label "isProvidedBy"@en ;
+    rdfs:comment """The datum source for KPI calculation is provided by observation.\r
+The energy storage is provided by energy production.\r
+The energy supply is provided by energy production or energy storage."""@en ;
+    rdfs:domain </.well-known/genid/emkpi/Nd1bbbc8b486146aabd30b61926faba14> ;
+    rdfs:range </.well-known/genid/emkpi/N67c002009b964e8daaef8312deb3effe> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#providesTo> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isRoofOf> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isRoofOf"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isScheduleOf> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isScheduleOf"@en ;
+    rdfs:domain <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Schedule> ;
+    owl:inverseOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#hasSchedule> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isUnitOf> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isUnitOf"@en ;
+    rdfs:domain <http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isVariableOf> a owl:ObjectProperty ;
+    rdfs:label "isVariableOf"@en .
+
+<http://identifiers.org/mamo/Independent_variable> a owl:Class ;
+    rdfs:label "Independent_variable"^^xsd:string ;
+    rdfs:subClassOf <http://identifiers.org/mamo/Variable> .
+
+<http://purl.oclc.org/NET/ssnx/ssn#featureOfInterest> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "featureOfInterest"@en ;
+    rdfs:comment "Relation linking an Observation to its Feature Of Interest."@en ;
+    rdfs:domain <http://purl.oclc.org/NET/ssnx/ssn#Observation> ;
+    rdfs:range <http://purl.oclc.org/NET/ssnx/ssn#FeatureOfInterest> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isFeatureOfInterestOf> .
+
+<http://purl.oclc.org/NET/ssnx/ssn#hasInput> a owl:ObjectProperty ;
+    rdfs:label "hasInput"@en ;
+    rdfs:comment "The input of datum source for KPI calculation"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#KPICalculation> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#DatumSource> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isInputOf> .
+
+<http://purl.oclc.org/NET/ssnx/ssn#hasOutput> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasOutput"@en ;
+    rdfs:comment "The output of KPI calculation, the calculation result of KPI"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#KPICalculation> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#KPIValue> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isOutputOf> .
+
+<http://purl.oclc.org/NET/ssnx/ssn#hasProperty> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasProperty"@en ;
+    rdfs:comment "The chain here ensures that the observed property of an observation is a property of the feature of interest. "@en ;
+    owl:inverseOf <http://purl.oclc.org/NET/ssnx/ssn#isPropertyOf> .
+
+<http://purl.oclc.org/NET/ssnx/ssn#observationResult> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "The result of an observation"@en,
+        "observationResult"@en ;
+    rdfs:domain <http://purl.oclc.org/NET/ssnx/ssn#Observation> ;
+    rdfs:range <http://purl.oclc.org/NET/ssnx/ssn#ObservationValue> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isObservationResultOf> .
+
+<http://purl.oclc.org/NET/ssnx/ssn#observationSamplingTime> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "observationSamplingTime"@en ;
+    rdfs:comment "The time interval of an observation"@en ;
+    rdfs:domain <http://purl.oclc.org/NET/ssnx/ssn#Observation> ;
+    rdfs:range time:Interval ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isObservationSamplingTimeOf> .
+
+<http://purl.oclc.org/NET/ssnx/ssn#observedProperty> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "observedProperty"@en ;
+    rdfs:comment "Relation linking an Observation to the Property that was observed. The observedProperty should be a Property (hasProperty) of the FeatureOfInterest (linked by featureOfInterest) of this observation."^^xsd:string ;
+    rdfs:domain <http://purl.oclc.org/NET/ssnx/ssn#Observation> ;
+    rdfs:range <http://purl.oclc.org/NET/ssnx/ssn#Property> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isObservedPropertyOf> .
+
+<http://schema.org/address> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "address"@en ;
+    rdfs:comment "To describe the address of a Location"@en ;
+    rdfs:domain dcterms:Location ;
+    rdfs:range xsd:string .
+
+<http://schema.org/attendee> a owl:ObjectProperty ;
+    rdfs:label "attendee"@en ;
+    rdfs:comment "Relation linking an Event and the Occupants who attend it"@en ;
+    rdfs:domain <http://schema.org/Event> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#Occupant> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#attendeeOf> .
+
+<http://schema.org/duration> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "duration"@en ;
+    rdfs:comment "Relation linking an Event and its duration"@en ;
+    rdfs:domain <http://schema.org/Event> ;
+    rdfs:range xsd:duration .
+
+<http://schema.org/event> a owl:ObjectProperty ;
+    rdfs:label "event"@en ;
+    rdfs:comment "Relation linking building Zone and its Event"@en ;
+    rdfs:domain <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Zone> ;
+    rdfs:range <http://schema.org/Event> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#eventOf> .
+
+<http://schema.org/geo> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "geo"@en ;
+    rdfs:comment "Relation linking a Location to geographical coordinates point. "@en ;
+    rdfs:domain dcterms:Location ;
+    rdfs:range <http://www.w3.org/2003/01/geo/wgs84_pos#Point> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#geoPointOf> .
+
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasValue> a owl:DatatypeProperty ;
+    rdfs:label "hasValue"@en ;
+    rdfs:comment "Relation to describe an value of an observation or KPI"@en ;
+    rdfs:domain </.well-known/genid/emkpi/N532d828a24cd4f9285d79ddadab06b8b> ;
+    rdfs:range </.well-known/genid/emkpi/N054e2634483846339cd35dbd0a406547> .
+
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isLocationOf> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isLocationOf"@en ;
+    rdfs:domain dcterms:Location .
+
+<http://www.w3.org/2003/01/geo/wgs84_pos#alt> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "altitude"@en ;
+    rdfs:domain <http://www.w3.org/2003/01/geo/wgs84_pos#Point> ;
+    rdfs:range xsd:string .
+
+<http://www.w3.org/2003/01/geo/wgs84_pos#lat> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "latitude"@en ;
+    rdfs:domain <http://www.w3.org/2003/01/geo/wgs84_pos#Point> ;
+    rdfs:range xsd:string .
+
+<http://www.w3.org/2003/01/geo/wgs84_pos#long> a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "longitude"@en ;
+    rdfs:domain <http://www.w3.org/2003/01/geo/wgs84_pos#Point> ;
+    rdfs:range xsd:string .
+
+time:inXSDDateTime a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "inXSDDateTime"@en ;
+    rdfs:comment "Relation linking an Instant and a dateTime"@en ;
+    rdfs:domain time:Instant ;
+    rdfs:range xsd:dateTime .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyCostTariff> a owl:Class ;
+    rdfs:label "EnergyCostTariff"^^xsd:string ;
+    rdfs:comment "The tariff for purchasing energy per unit from main grid (district energy provider)"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyTariff> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#energyConsumedBy> a owl:ObjectProperty ;
+    rdfs:label "energyConsumedBy"@en .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#energyTypeConsumedBy> a owl:ObjectProperty ;
+    rdfs:label "energyTypeConsumedBy"@en .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#hasFloor> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasFloor"@en ;
+    rdfs:comment "Relation linking building Zone and its Floor"@en ;
+    rdfs:domain <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Zone> ;
+    rdfs:range <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#Floor> ;
+    owl:inverseOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#isFloorOf> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#isFloorOf> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isFloorOf"@en .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/ProcessOntology.owl#isInfluencedBy> a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "isInfluencedBy"@en .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#BuildingStorey> a owl:Class ;
+    rdfs:label "BuildingStorey"@en ;
+    rdfs:comment "Building storey captures the storey structure in building"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/Nb95f88f6975f4fcba25b36a9d17311b2>,
+        <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#BuildingElement> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#IndoorAirQuality> a owl:Class ;
+    rdfs:label "IndoorAirQuality"@en ;
+    rdfs:comment "Indoor air quality describes the quality (or contamination level) of indoor air"@en ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#IndoorComfort> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#isEquipmentParameterOf> a owl:ObjectProperty ;
+    rdfs:label "isEquipmentParameterOf"@en ;
+    rdfs:domain <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#EquipmentParameter> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#Assumption> a owl:Class ;
+    rdfs:label "Assumption"@en ;
+    rdfs:comment "The assumption of the methematical model of KPI calculation"@en ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#KPICalculationComponent> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#BuildingType> a owl:Class ;
+    rdfs:label "BuildingType"@en ;
+    rdfs:comment "Building type describes the functinonal type of a building"@en ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#EntityType> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#EnergyProductionForecast> a owl:Class ;
+    rdfs:label "EnergyProductionForecast"^^xsd:string ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#EnergyForecast> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#EnergySupplyFromExternalGrid> a owl:Class ;
+    rdfs:label "EnergySupplyFromEnergyProvider"@en ;
+    rdfs:comment "The energy supplied by district energy provider for end uses"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergySupply> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#EnergySupplyFromSiteProduction> a owl:Class ;
+    rdfs:label "EnergySupplyFromSiteProduction"@en ;
+    rdfs:comment "The energy supplied directly by site production for end uses"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergySupply> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#EnergySupplyFromStorage> a owl:Class ;
+    rdfs:label "EnergySupplyFromStorage"@en ;
+    rdfs:comment "The energy supplied by storage system for end uses"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergySupply> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#OperationalKPI> a owl:Class ;
+    rdfs:label "OperationalKPI"@en ;
+    rdfs:comment "The operational KPI is the KPI at the operational appliance level, the KPI corresponding to zone and equipment level."@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/Ne86938d1c6134203b03325615e171e15>,
+        <http://energy.linkeddata.es/em-kpi/ontology#KPI> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#PhotovoltaicType> a owl:Class ;
+    rdfs:label "PhotovoltaicType"@en ;
+    rdfs:comment "Photovoltaic type describes the type of PV generating unit"@en ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#EntityType> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#RenewableGeneratingUnit> a owl:Class ;
+    rdfs:label "RenewableGeneratingUnit"^^xsd:string ;
+    rdfs:comment "The generating unit produces energy with renewable resources."@en ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#GeneratingUnit> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#StoringUnit> a owl:Class ;
+    rdfs:label "StoringUnit"^^xsd:string ;
+    rdfs:comment "Storing unit is the device that stores energy."@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/Nb9ef83bf123d46f8bbd961ad65ac41fe> ;
+    owl:equivalentClass </.well-known/genid/emkpi/N2823871e83e24e85b3340d05eac4935a> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#StrategicKPI> a owl:Class ;
+    rdfs:label "StrategicKPI"@en ;
+    rdfs:comment "The strategic KPI is the KPI at the strategic decision level, the hyper-aggregated KPI corresponding to district scale"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/Nb6bd8b81f6654a1ab405f0501dfc5bed>,
+        <http://energy.linkeddata.es/em-kpi/ontology#KPI> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#ThermalComfort> a owl:Class ;
+    rdfs:label "ThermalComfort"@en ;
+    rdfs:comment "Thermal comfort describes the comfort condition related indoor temperature and humidity"@en ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#IndoorComfort> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#UniversalConstant> a owl:Class ;
+    rdfs:label "UniversalConstant"@en ;
+    rdfs:comment "The universal constant in the mathematical model of KPI calculation"@en ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#KPICalculationComponent> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#WeatherForecast> a owl:Class ;
+    rdfs:label "WeatherForecast"@en ;
+    rdfs:comment "The short-term forecast of the weather"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N791d00adc45843f997cec30b780525d0>,
+        <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#EnvironmentalParameter> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#WindDirection> a owl:Class ;
+    rdfs:label "WindDirection"@en ;
+    rdfs:comment "The weather phenomenon of wind direction"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#WeatherPhenomenon> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#WindSpeed> a owl:Class ;
+    rdfs:label "WindSpeed"@en ;
+    rdfs:comment "The weather phenomenon of wind speed"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#WeatherPhenomenon> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#deliversEnergy> a owl:ObjectProperty ;
+    rdfs:label "deliversEnergy"@en ;
+    rdfs:comment "Relation linking the power delivery system or equipment to the Energy Supply parameter"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#PowerSystemResource> ;
+    rdfs:range <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergySupply> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#energyDeliveredBy> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasDisaggregation> a owl:ObjectProperty ;
+    rdfs:label "hasDisaggregation"@en ;
+    rdfs:comment "Strategic KPI can be disaggregated to tactical KPI, and tactical KPI can be disaggregated to operational KPI."@en ;
+    rdfs:domain </.well-known/genid/emkpi/Nb7e9626582f142f19e8b41c534d27027> ;
+    rdfs:range </.well-known/genid/emkpi/N3527f86cfd724ebcb3b264ca5f385fe7> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isDisaggregationOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasUnit> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasUnit"@en ;
+    rdfs:comment "To describe the unit of observation value and KPI value"@en ;
+    rdfs:domain </.well-known/genid/emkpi/Ncd0195e00a29435db9fd628a64f8f84c> ;
+    rdfs:range <http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isUnitOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isCalculationOf> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isCalculationOf"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#KPICalculation> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#KPI> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isMathematicalModelOf> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isMathematicalModelOf"@en ;
+    rdfs:comment "Relation linking a KPI with its mathematical model"@en ;
+    rdfs:domain <http://identifiers.org/mamo/Mathematical_model> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#KPI> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#storesEnergyType> a owl:ObjectProperty ;
+    rdfs:label "storesEnergyType"@en ;
+    rdfs:comment "Relation linking the energy storage system or equipment to Energy Type it stores"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#PowerSystemResource> ;
+    rdfs:range <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyType> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#suppliesTo> a owl:ObjectProperty ;
+    rdfs:label "suppliesTo"@en ;
+    rdfs:comment "Relation linking Energy Supply to the Energy Demand"@en ;
+    rdfs:domain <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergySupply> ;
+    rdfs:range <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyDemand> .
+
+<http://purl.oclc.org/NET/ssnx/ssn#isPropertyOf> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isPropertyOf"@en ;
+    rdfs:comment "Relation between a FeatureOfInterest and a Property (a Quality observable by a sensor) of that feature."^^xsd:string ;
+    rdfs:domain <http://purl.oclc.org/NET/ssnx/ssn#Property> ;
+    rdfs:range <http://purl.oclc.org/NET/ssnx/ssn#FeatureOfInterest> .
+
+dcterms:identifier a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "identifier"@en ;
+    rdfs:comment "A functional data property with unique values to make individuals different when their values are different. "@en ;
+    rdfs:range xsd:string .
+
+dcterms:title a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "title"@en ;
+    rdfs:comment "To describe the name of an object"@en ;
+    rdfs:range xsd:string .
+
+xsd:duration a rdfs:Datatype .
+
+xsd:gYear a rdfs:Datatype .
+
+owl:Thing a owl:Class .
+
+time:hasBeginning a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasBeginning"@en ;
+    rdfs:comment "Relation linking an Interval to its beginning Instant"@en ;
+    rdfs:domain time:Interval ;
+    rdfs:range time:Instant .
+
+time:hasEnd a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasEnd"@en ;
+    rdfs:comment "Relation linking an Interval to its end Instant"@en ;
+    rdfs:domain time:Interval ;
+    rdfs:range time:Instant .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyProducerFacility> a owl:Class ;
+    rdfs:label "EnergyProducerFacility"@en ;
+    rdfs:comment "The energy facility in the building that produces energy"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N410fc01554944b3ea88d6fc80a00ed8c>,
+        </.well-known/genid/emkpi/Nb11c464daeb043dbab4dcf148bc6254c> ;
+    owl:equivalentClass </.well-known/genid/emkpi/Ncb64d6f74e58433380174d81d99d34d1> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#Room> a owl:Class ;
+    rdfs:label "Room"^^xsd:string ;
+    rdfs:comment "The room contained in the zone"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#BuildingElement> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#consumesEnergyType> a owl:ObjectProperty ;
+    rdfs:label "consumesEnergyType"^^xsd:string ;
+    rdfs:comment "Relation linking the energy consumption system or equipment to the Energy Type it consumes"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#PowerSystemResource> ;
+    rdfs:range <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyType> ;
+    owl:inverseOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#energyTypeConsumedBy> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#hasAssociatedZone> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasAssociatedZone"@en ;
+    rdfs:comment "Relation linking the Indoor Comfort and its associated Zone"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#IndoorComfort> ;
+    rdfs:range <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Zone> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#isIn> a owl:ObjectProperty ;
+    rdfs:label "isIn"^^xsd:string .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#SolarIrradiance> a owl:Class ;
+    rdfs:label "SolarIrradiance"@en ;
+    rdfs:comment "The intensity of outdoor solar radiation"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#WeatherPhenomenon> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#Wind> a owl:Class ;
+    rdfs:label "Wind"@en ;
+    rdfs:comment "The wind condition like wind speed and wind direction"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N1ec76a0ca39b4fadbb770ab4ecf2272d>,
+        </.well-known/genid/emkpi/Nc27dba3988db420882501327176c3346>,
+        <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#WeatherPhenomenon> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#hasDirection> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasDirection"@en ;
+    rdfs:comment "Relation linking a Wind and its direction"@en ;
+    rdfs:domain <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#Wind> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#WindDirection> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#hasSpeed> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasSpeed"@en ;
+    rdfs:comment "Relation linking a Wind and its speed "@en ;
+    rdfs:domain <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#Wind> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#WindSpeed> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Area> a owl:Class ;
+    rdfs:label "Area"@en ;
+    rdfs:comment "Specifies the area of the building."@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#BuildingParameter> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Volume> a owl:Class ;
+    rdfs:label "Volume"@en ;
+    rdfs:comment "Specifies the volume of the air conditioned space in building"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#BuildingParameter> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#containsEquation> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "containsEquation"@en ;
+    rdfs:comment "The equation of the mathematical model of KPI calculation"@en ;
+    rdfs:domain <http://identifiers.org/mamo/Mathematical_model> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#Equation> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#hasSchedule> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasSchedule"@en ;
+    rdfs:comment "Relation linking an Event and its Schedule"@en ;
+    rdfs:domain <http://schema.org/Event> ;
+    rdfs:range <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Schedule> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#GeneratingUnit> a owl:Class ;
+    rdfs:label "GeneratingUnit"^^xsd:string ;
+    rdfs:comment "Generating unit is the power unit that generates energy for district end users, like photovoltaic array."@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/Na504426a56cf459595cfd7e1eeeff166> ;
+    owl:equivalentClass </.well-known/genid/emkpi/N8bcaea69017a4be7980c0949871d4c86> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#KPIEvaluatedObject> a owl:Class ;
+    rdfs:label "KPIEvaluatedObject"@en ;
+    rdfs:comment "The evaluated object of key performance indicator"@en ;
+    owl:equivalentClass </.well-known/genid/emkpi/Nc0d79a38e0e942ec9316052a42c76fca> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasDeterminant> a owl:ObjectProperty ;
+    rdfs:label "hasDeterminant"@en ;
+    rdfs:comment "Relation linking Energy Cost to its determinants like Energy Supply and Energy Tariff"@en ;
+    rdfs:domain <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyCost> ;
+    rdfs:range </.well-known/genid/emkpi/N32794ff2faab43658ea4d19b230dd0b4> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isDeterminantOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#hasForecast> a owl:ObjectProperty ;
+    rdfs:label "Relation linking Weather or Energy to its forecast"@en,
+        "hasForecast"@en ;
+    rdfs:domain </.well-known/genid/emkpi/N9bf82ff753604256b9de0080667ab03a> ;
+    rdfs:range </.well-known/genid/emkpi/Ne0e47566c518420283904e00b97ee35d> ;
+    owl:inverseOf <http://energy.linkeddata.es/em-kpi/ontology#isForecastOf> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isDisaggregationOf> a owl:ObjectProperty ;
+    rdfs:label "isDisaggregationOf"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#storesEnergy> a owl:ObjectProperty ;
+    rdfs:label "storesEnergy"@en ;
+    rdfs:comment "Relation linking the energy storage system or equipemnt to the Energy Storage parameter"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#PowerSystemResource> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#EnergyStorage> .
+
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasLocation"@en ;
+    rdfs:comment "Relation linking an object or event to a geographical Location."@en ;
+    rdfs:domain </.well-known/genid/emkpi/N9deca32898a34131bd4ef3151e4b5792> ;
+    rdfs:range dcterms:Location ;
+    owl:inverseOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isLocationOf> .
+
+time:TemporalEntity a owl:Class ;
+    rdfs:label "TemporalEntity"@en ;
+    rdfs:comment "A temporal entity is an instant or an interval"@en .
+
+<http://www.wurvoc.org/vocabularies/om-1.8/Compound_unit> a owl:Class ;
+    rdfs:label "Compound_unit"^^xsd:string ;
+    rdfs:subClassOf <http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyCost> a owl:Class ;
+    rdfs:label "EnergyCost"^^xsd:string ;
+    rdfs:comment "The cost for purchasing energy from external grid"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N268d4c8373ea4298b37fbd7ae58a5a70>,
+        </.well-known/genid/emkpi/N912242fef94b4a9dad26c05812ccc8f9>,
+        </.well-known/genid/emkpi/Nf9a6e861c0384636a2b02d07d452ae7b>,
+        <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyParameter> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyFacility> a owl:Class ;
+    rdfs:label "EnergyFacility"@en ;
+    rdfs:comment "The energy facility in building that consumes or produces energy"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N7ab7a82b1d354823bb9d5ce384232762>,
+        </.well-known/genid/emkpi/N810205dbe666426a96417d14b3be785c>,
+        <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#BuildingThing> ;
+    owl:equivalentClass </.well-known/genid/emkpi/Nb220d96e832f4173899ee1513b889d61> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#Equipment> a owl:Class ;
+    rdfs:label "Equipment"@en ;
+    rdfs:comment "The equipment in building and district power system."@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N1208822417e84eeda41f5f35e0aefd87>,
+        </.well-known/genid/emkpi/Nd022b7670bec4d2abafe2d4edf1172d3>,
+        <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject> ;
+    owl:equivalentClass </.well-known/genid/emkpi/N7d82108a868547b492a19dea046d891b> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#producesEnergyType> a owl:ObjectProperty ;
+    rdfs:label "producesEnergyType"^^xsd:string ;
+    rdfs:comment "Relation linking the energy generation system or equipment to the Energy Type ir produces"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#PowerSystemResource> ;
+    rdfs:range <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyType> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Schedule> a owl:Class ;
+    rdfs:label "Schedule"@en ;
+    rdfs:comment "The day schedule of the event taken place in the zone"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N4d938cc22ab34cf3be910e07149d4662> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#District> a owl:Class ;
+    rdfs:label "District"@en ;
+    rdfs:comment "District is the platform where contains multi buildings and other physical objects."@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N48be755be47e46c5a43d82e7140021cc>,
+        </.well-known/genid/emkpi/N5996bd7f0e3544d0ac2dc362258a75c3>,
+        </.well-known/genid/emkpi/N59d98f28428a46b290f9ef09de370ee6>,
+        </.well-known/genid/emkpi/Nb47f5b78e3db4ee7a6522e728afe7962>,
+        </.well-known/genid/emkpi/Nbd090fb98e2c4db1bc650bdb9c26dd1a>,
+        </.well-known/genid/emkpi/Ne937df90a15243558d7f56b6237dd025>,
+        </.well-known/genid/emkpi/Nf5d2a77d4940404c89a1cc752180fc55> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#EntityType> a owl:Class ;
+    rdfs:label "EntityType"@en ;
+    rdfs:comment "Entity type describes the type of a entity like building, equipment, energy, etc."@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#Equation> a owl:Class ;
+    rdfs:label "Equation"@en ;
+    rdfs:comment "The equation of the mathematical model for KPI calculation"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N715d9e32c68d4b16bee672b4d6a81c93>,
+        <http://energy.linkeddata.es/em-kpi/ontology#KPICalculationComponent> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#EquipmentContainer> a owl:Class ;
+    rdfs:label "EquipmentContainer"^^xsd:string ;
+    rdfs:comment "Equipment container is the district power unit that contains groups of equipment, like substation, plant, Distributed Energy Resources, etc."@en ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#PowerSystemResource> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#ExtWall> a owl:Class ;
+    rdfs:label "ExteriorWall"@en ;
+    rdfs:comment "The exterior wall that contributes thermal load to the building and zone"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/Nb5cc4a7b5995463f9ea973e628fcf863>,
+        <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#BuildingElement> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#KPIValue> a owl:Class ;
+    rdfs:label "KPIValue"@en ;
+    rdfs:comment "KPI value is the result of KPI calculation"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N252b5abd89b1453ab056a510c823e113>,
+        </.well-known/genid/emkpi/N691c3750660d4edb9b527d13975a8977> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#PerformanceGoal> a owl:Class ;
+    rdfs:label "PerformanceGoal"@en ;
+    rdfs:comment "The performance that needed to be achieved"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N9e71916fa9d54b66914c94b3cd559858> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#Roof> a owl:Class ;
+    rdfs:label "Roof"@en ;
+    rdfs:comment "The roof of the zone"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N4062d6a023734809bef06d65ce9a7c40>,
+        <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#BuildingElement> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#TacticalKPI> a owl:Class ;
+    rdfs:label "TacticalKPI"@en ;
+    rdfs:comment "The tactical KPI is the KPI at tactical decision level, the KPI disaggregated from strategic KPI corresponding to building and system level"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N427a7fa9b287457ea8b8eb7a7f6df2d1>,
+        </.well-known/genid/emkpi/N5dc2985c51ee48a5a291a686dc7ed84e>,
+        <http://energy.linkeddata.es/em-kpi/ontology#KPI> .
+
+<http://identifiers.org/mamo/Variable> a owl:Class ;
+    rdfs:label "Variable"@en ;
+    rdfs:comment "The variable in the mathematical model of KPI calculation"@en ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#KPICalculationComponent> .
+
+<http://purl.oclc.org/NET/ssnx/ssn#FeatureOfInterest> a owl:Class ;
+    rdfs:label "FeatureOfInterest"^^xsd:string ;
+    rdfs:comment "A feature is an abstraction of real world phenomena (thing, person, event, etc)"^^xsd:string ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N8a1e3a4e54df42539d9d17fe72348c22> ;
+    owl:equivalentClass </.well-known/genid/emkpi/N8e5949aa0fbd4d5ba3763d6ebdbc4de9> .
+
+<http://purl.oclc.org/NET/ssnx/ssn#ObservationValue> a owl:Class ;
+    rdfs:label "ObservationValue"@en ;
+    rdfs:comment "The observation result of the sensor or meter"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N45a048b7db514c038d2376d612029948> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#Floor> a owl:Class ;
+    rdfs:label "Floor"^^xsd:string ;
+    rdfs:comment "The floor of the zone"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/Nd17167e6efdc4047a2a502c9bc01def8>,
+        <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#BuildingElement> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/ProcessOntology.owl#OccupancyParameter> a owl:Class ;
+    rdfs:label "OccupancyParameter"@en ;
+    rdfs:comment "The parameter of occupancy like occupant number or other property"@en ;
+    rdfs:subClassOf <http://purl.oclc.org/NET/ssnx/ssn#Property> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#BuildingParameter> a owl:Class ;
+    rdfs:label "BuildingParameter"@en ;
+    rdfs:comment "The building static parameter that to be measured, like area, volume, material property"@en ;
+    rdfs:subClassOf <http://purl.oclc.org/NET/ssnx/ssn#Property> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#EnvironmentalParameter> a owl:Class ;
+    rdfs:label "EnvironmentalParameter"@en ;
+    rdfs:comment "The parameter describes the environment condition, including indoor environment (indoor comfort) and outdoor environment (weather)"@en ;
+    rdfs:subClassOf <http://purl.oclc.org/NET/ssnx/ssn#Property> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#DatumSource> a owl:Class ;
+    rdfs:label "DatumSource"@en ;
+    rdfs:comment "Datum source needed for KPI calculation"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N139608b28f2b4f4b8ef4b5734fb24b35>,
+        <http://energy.linkeddata.es/em-kpi/ontology#KPICalculationComponent> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#EnergyForecast> a owl:Class ;
+    rdfs:label "EnergyForecast"@en ;
+    rdfs:comment "The forecast of energy demand or production"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N4c66947b3d014e058b6555369c12373a>,
+        <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyParameter> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#ExtWindow> a owl:Class ;
+    rdfs:label "ExteriorWindow"@en ;
+    rdfs:comment "The exterior window that contributes thermal load to the building and zone"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N05cd96b416d54120a165007b62213fd4>,
+        <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#BuildingElement> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#IndoorComfort> a owl:Class ;
+    rdfs:label "IndoorComfort"@en ;
+    rdfs:comment "Indoor comfort describes the indoor environment"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N60c07e17b8284ed69d5cb9d4dc862e29>,
+        </.well-known/genid/emkpi/N7f64db88200140eaad0cfc037732cd6d>,
+        <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#EnvironmentalParameter> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#OccupantBehavior> a owl:Class ;
+    rdfs:label "OccupantBehavior"@en ;
+    rdfs:comment "The behavior of occupant that influences to energy demand"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N7edd6745a04749c8a84cdf68d1f7825a>,
+        </.well-known/genid/emkpi/N90cc9b796bf049e380dfb28fb146694f> .
+
+<http://www.w3.org/2003/01/geo/wgs84_pos#Point> a owl:Class ;
+    rdfs:label "GeographicalCoordinatesPoint"^^xsd:string ;
+    rdfs:comment "A point, typically described using a coordinate system relative to Earth, such as WGS84, includes the latitude, altitude and longitude of a place."@en,
+        """Uniquely identified by lat/long/alt. i.e.\r
+\r
+spaciallyIntersects(P1, P2) :- lat(P1, LAT), long(P1, LONG), alt(P1, ALT),\r
+  lat(P2, LAT), long(P2, LONG), alt(P2, ALT).\r
+\r
+sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P2)."""@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/Ndde8610a8a604d4588929f518342847f> .
+
+time:Instant a owl:Class ;
+    rdfs:label "Instant"@en ;
+    rdfs:comment "An instant is a time instant"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N924f5f1c0806451da00e1d604c7b9a01>,
+        time:TemporalEntity .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#BuildingThing> a owl:Class ;
+    rdfs:label "BuildingThing"@en ;
+    rdfs:comment "All things (here physical objects) that creates a building, it is intended as root of all building components."@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N1a7618981f1c493183cf44726617eaba>,
+        <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyGain> a owl:Class ;
+    rdfs:label "EnergyGain"@en ;
+    rdfs:comment "The energy gain is the produced energy that feed into external grid so as to obtain monetary gain"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyParameter> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyTariff> a owl:Class ;
+    rdfs:label "EnergyTariff"^^xsd:string ;
+    rdfs:comment "Tariff that is charged per energy unit by district energy providers"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyParameter> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#producesEnergy> a owl:ObjectProperty ;
+    rdfs:label "producesEnergy"^^xsd:string ;
+    rdfs:comment "Relation linking the energy generating system or equipment with the Energy Production parameter "@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#PowerSystemResource> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#EnergyProduction> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#U-value> a owl:Class ;
+    rdfs:label "U-value"@en ;
+    rdfs:comment "Overall thermal conductance of the envelope"@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#BuildingParameter> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Weather> a owl:Class ;
+    rdfs:label "Weather"@en ;
+    rdfs:comment "Weather describes the outdoor environment"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N583d5c2f9bd94e9ab95b25f07ed24587>,
+        </.well-known/genid/emkpi/N589977148c9a404fb4332c0c82956d67>,
+        </.well-known/genid/emkpi/N9c3ee05a3e9742edbb6e76d96a94a626>,
+        <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#EnvironmentalParameter> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#containsU-value> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "containsU-value"@en ;
+    rdfs:comment "Relation linking a building envelope (exterior wall, exterior window, roof or floor) and its U-value"@en ;
+    rdfs:domain </.well-known/genid/emkpi/N6d0a2f06c02e45ed8f1d5d7fab871ab3> ;
+    rdfs:range <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#U-value> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#PowerEquipment> a owl:Class ;
+    rdfs:label "PowerEquipment"^^xsd:string ;
+    rdfs:comment "Power equipment is the equipment contained in district power system."@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N03da418a38e14b2cbd656ea9fea70078>,
+        <http://energy.linkeddata.es/em-kpi/ontology#PowerSystemResource> ;
+    owl:equivalentClass </.well-known/genid/emkpi/N80ac3c5631894ed48429a111314baa28> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isFeatureOfInterestOf> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isFeatureOfInterestOf"@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#providesTo> a owl:ObjectProperty ;
+    rdfs:label "providesTo"@en ;
+    rdfs:domain </.well-known/genid/emkpi/N4bf311b90f9049a19b4aa636b3978ce7> ;
+    rdfs:range </.well-known/genid/emkpi/N92b505f2226a47e5bd5ba231f023ca87> .
+
+time:Interval a owl:Class ;
+    rdfs:label "Interval"@en ;
+    rdfs:comment "The time interval of the observation or evaluation"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N4056c4683e134d0187ffc2327ce2bc1a>,
+        </.well-known/genid/emkpi/N51d00c3832634aeb8ee38838a41f157c>,
+        time:TemporalEntity .
+
+<http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure> a owl:Class ;
+    rdfs:label "Unit_of_measure"^^xsd:string ;
+    rdfs:comment "The unit of the observation value or KPI calculation value"@en .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyConsumerFacility> a owl:Class ;
+    rdfs:label "EnergyConsumerFacility"^^xsd:string ;
+    rdfs:comment "The energy facility in the building that consumes energy."@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N5a5aeedcbf4246138c4d0d069844b1b0>,
+        </.well-known/genid/emkpi/Ne13a1b3016224aea8d6fbb3fd1cb3e18> ;
+    owl:equivalentClass </.well-known/genid/emkpi/N6677156a9898483cb9b50192b0416605> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#consumesEnergy> a owl:ObjectProperty ;
+    rdfs:label "consumesEnergy"^^xsd:string ;
+    rdfs:comment "Relation linking the energy consumption system or equipment to the Energy Demand parameter"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#PowerSystemResource> ;
+    rdfs:range <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyDemand> ;
+    owl:inverseOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#energyConsumedBy> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl#WeatherPhenomenon> a owl:Class ;
+    rdfs:label "WeatherPhenomenon"@en ;
+    rdfs:comment "Weather phenomenon describes the ourdoor temperature, humidity, solar radiation and wind."@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Weather> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#isAssociatedObjectOf> a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "isAssociatedObjectOf"@en ;
+    rdfs:domain <http://energy.linkeddata.es/em-kpi/ontology#KPIEvaluatedObject> ;
+    rdfs:range <http://energy.linkeddata.es/em-kpi/ontology#KPICalculation> .
+
+dcterms:Location a owl:Class ;
+    rdfs:label "Location"@en ;
+    rdfs:comment "A spatial region or named place. It contains the geographical coordinates point or postal address of an object."@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/Nce51d5aefaa74d78826846c30f3d56da>,
+        </.well-known/genid/emkpi/Nea8d5d727d424e6fa0f1865ee62395b4> .
+
+<http://schema.org/Event> a owl:Class ;
+    rdfs:label "Event"@en ;
+    rdfs:comment "The event taken place in the zone, such entertainment event, dinner, conference, etc. A non-persistent, time-based occurrence, has location, duration, and responsible actors associated with an event. "@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N422eab9213d8470a8275795e5fc77bc9>,
+        </.well-known/genid/emkpi/N7a60ce8121c44aceb74debfc01b71773>,
+        </.well-known/genid/emkpi/Ncbbd75425d2f459085727afb78895a1b>,
+        </.well-known/genid/emkpi/Ndd985a57f4104e1c982365abb77ad96b> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Building> a owl:Class ;
+    rdfs:label "Building"@en ;
+    rdfs:comment "The building in the district."@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N0f0522e6f2664ad2b6b591476e5a651a>,
+        </.well-known/genid/emkpi/N3d5f6a11304a4bbd96b4e687dbe868fd>,
+        </.well-known/genid/emkpi/N41485bb101244e61b45759b2583c76c5>,
+        </.well-known/genid/emkpi/N4fc8766c4f274220813fbb5434338ea9>,
+        </.well-known/genid/emkpi/N5b745ed3eec44df4bfa1bbaedeb1d93d>,
+        </.well-known/genid/emkpi/N7123bdb8643047a991e7472906ceca6e>,
+        </.well-known/genid/emkpi/Na955fdd1611a4d5aaae3e945af2fd5ae>,
+        </.well-known/genid/emkpi/Nc73fc023888d4b2c8d5de226dedc5195>,
+        </.well-known/genid/emkpi/Nf2efe65528f9452d8a1026b635ef2198>,
+        <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#BuildingEquipment> a owl:Class ;
+    rdfs:label "BuildingEquipment"@en ;
+    rdfs:comment "The equipment contained in building"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/Na77ecac5edaf4a098ed327369ccd88d1>,
+        <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#BuildingThing> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#KPICalculationComponent> a owl:Class ;
+    rdfs:label "KPICalculationComponent"@en ;
+    rdfs:comment "The component needed for KPI calculation, like mathematical model, datum source, etc."@en .
+
+<http://energy.linkeddata.es/em-kpi/ontology#Occupant> a owl:Class ;
+    rdfs:label "Occupant"@en ;
+    rdfs:comment "The occupant who occupies the zone in building"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N70527130ed6348198c3678ecd21b5f11>,
+        </.well-known/genid/emkpi/Ne5cd2eb415764849919ccaa7659dd49a>,
+        </.well-known/genid/emkpi/Nfccf405981cd426794491fea6291f816>,
+        <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject> .
+
+<http://identifiers.org/mamo/Mathematical_model> a owl:Class ;
+    rdfs:label "Mathematical_model"^^xsd:string ;
+    rdfs:comment "The mathematical model for KPI calculation. The model is composed of a set of variables and a set of equations that establish relationships between the variables. "@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N1f6d8cc7607e4d968e5425c0cf2367cd>,
+        </.well-known/genid/emkpi/N7efe702ea57140c59c8dc050933d4637>,
+        </.well-known/genid/emkpi/Nd32c6a85fedd43a193c5480f8b45a5cb>,
+        </.well-known/genid/emkpi/Ne6e4393339d1442ca5e6605e7e423c42>,
+        </.well-known/genid/emkpi/Nfaf390d892f74c95ba16a75526ccee81>,
+        <http://energy.linkeddata.es/em-kpi/ontology#KPICalculationComponent> .
+
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject> a owl:Class ;
+    rdfs:label "PhysicalObject"^^xsd:string ;
+    rdfs:comment "An inanimate, three-dimensional object or substance. The physical object identified in the district."@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N21b24306af5240aa8b6e5e61c69748ec> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/ProcessOntology.owl#hasInfluenceOn> a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "hasInfluenceOn"@en ;
+    rdfs:comment "Relation to describe one thing influence to another thing"@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range owl:Thing ;
+    owl:inverseOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/ProcessOntology.owl#isInfluencedBy> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#BuildingElement> a owl:Class ;
+    rdfs:label "BuildingElement"@en ;
+    rdfs:comment "The element composes the building structure."@en ;
+    rdfs:subClassOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#BuildingThing> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#EquipmentParameter> a owl:Class ;
+    rdfs:label "EquipmentParameter"^^xsd:string ;
+    rdfs:comment "The parameters of power equipment or building equipment."@en ;
+    rdfs:subClassOf <http://purl.oclc.org/NET/ssnx/ssn#Property> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#EnergyStorage> a owl:Class ;
+    rdfs:label "EnergyStorage"@en ;
+    rdfs:comment "The energy stored by storage system"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/Nf48298dfc5a5483985da7474fbb18f13>,
+        <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyParameter> .
+
+<http://purl.oclc.org/NET/ssnx/ssn#Property> a owl:Class ;
+    rdfs:label "ObservationProperty"^^xsd:string ;
+    rdfs:comment "The observed property describes what kind of data is observed."@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N0fa82356ebff40c2b9bd659a8e14937e> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyParameter> a owl:Class ;
+    rdfs:label "EnergyParameter"@en ;
+    rdfs:comment "Energy parameter describes energy behavior in district and buildings, inluding energy production, energy storage, energy supply, energy demand, energy cost and tariff, etc."@en ;
+    rdfs:subClassOf <http://purl.oclc.org/NET/ssnx/ssn#Property> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#contains> a owl:ObjectProperty ;
+    rdfs:label "contains"^^xsd:string ;
+    rdfs:comment "Relation describing one object is included in another object."@en ;
+    rdfs:domain </.well-known/genid/emkpi/N403688b93bba44809422d5f6d3e36ddc> ;
+    rdfs:range <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject> ;
+    owl:inverseOf <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#isIn> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#EnergyProduction> a owl:Class ;
+    rdfs:label "EnergyProduction"@en ;
+    rdfs:comment "Energy producted by generation system"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N1162401db80343078ee6a23b7702b8c5>,
+        </.well-known/genid/emkpi/N1a3e5461c9ba477ebc317ed09ddc779d>,
+        </.well-known/genid/emkpi/N1c4e7ac612a643a998fcd91e5ce1bf8d>,
+        </.well-known/genid/emkpi/N5722136178dd4766a9e862fcc10f4bc6>,
+        <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyParameter> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#Zone> a owl:Class ;
+    rdfs:label "Zone"@en ;
+    rdfs:comment "The thermal zone in the building"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N226ea45bd9564ddfa5fd2732801ec38b>,
+        </.well-known/genid/emkpi/N364b297b06d440ea8a4d1d0639c09d19>,
+        </.well-known/genid/emkpi/N66182dafe54b4f1dac4c6ad0edb47d56>,
+        </.well-known/genid/emkpi/N68388333677f4a2488b9918a4e5cfffc>,
+        </.well-known/genid/emkpi/N6a96cdc5d93044e98c6038ac0a85219d>,
+        </.well-known/genid/emkpi/N8a0196854122466096dab2c02ec815cb>,
+        </.well-known/genid/emkpi/N9b9cc99c885549be8559d875b1cfbf19>,
+        <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/gbBuildingOntology.owl#BuildingElement> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#PowerSystemResource> a owl:Class ;
+    rdfs:label "PowerSystemResource"^^xsd:string ;
+    rdfs:comment "Power system resource is the resource in district microgrid, including energy generation units, energy storage units, energy consumers and power delivery system, etc."@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N26b6b788802b4fc9bf0ac26a9ed49d1c>,
+        </.well-known/genid/emkpi/N9dad0b5a1e5a43bf8f6297d37f9eb271>,
+        </.well-known/genid/emkpi/Nc8cb29ef1f414f62bec22c12f17544ab> ;
+    owl:equivalentClass </.well-known/genid/emkpi/Nf2cbfaad11074e70b6887a9dba82dd92> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyType> a owl:Class ;
+    rdfs:label "EnergyType"^^xsd:string ;
+    rdfs:comment "The energy type produced, consumed, stored or provided, such as electricity, heat and cold"@en ;
+    rdfs:subClassOf <http://energy.linkeddata.es/em-kpi/ontology#EntityType> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#KPI> a owl:Class ;
+    rdfs:label "KeyPerformanceIndicator"^^xsd:string ;
+    rdfs:comment "Key Performance Indicator that measures the progress towards stakeholder's key performance goal"^^xsd:string ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N2775fa9a4f474960bccb8b2325b591ac>,
+        </.well-known/genid/emkpi/N3a69ec4eee5c4b96a35004a9e76dff30>,
+        </.well-known/genid/emkpi/Ncfe03f91458b4abd857ba7348055665d> .
+
+<http://purl.oclc.org/NET/ssnx/ssn#Observation> a owl:Class ;
+    rdfs:label "Observation"@en ;
+    rdfs:comment """The observation data of the sensor or meter, the measurement of different parameter\r
+An Observation is a Situation in which a Sensing method has been used to estimate or calculate a value of a Property of a FeatureOfInterest. Links to Sensing and Sensor describe what made the Observation and how; links to Property and Feature detail what was sensed; the result is the output of a Sensor; other metadata details times etc."""^^xsd:string ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N26e74ca468d847638637bffc885e587f>,
+        </.well-known/genid/emkpi/N92371c02102747c2b1ab3921b93bd54d>,
+        </.well-known/genid/emkpi/N9f699ef3de9a4f7eb956014cf14e6960>,
+        </.well-known/genid/emkpi/Na1510013877a444891157fb0035202d0>,
+        </.well-known/genid/emkpi/Nbf65c9e464ba4cd598e781629503f51f> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyDemand> a owl:Class ;
+    rdfs:label "EnergyDemand"^^xsd:string ;
+    rdfs:comment "The energy demand in district or buildings"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/Nb5f6f09da2e7432fbb0568b291d74845>,
+        </.well-known/genid/emkpi/Nb8b08b273d1a435099e6fb779e40e3ae>,
+        <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyParameter> .
+
+<https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergySupply> a owl:Class ;
+    rdfs:label "EnergySupply"^^xsd:string ;
+    rdfs:comment "The energy supplied to end uses"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N4da7e15d924d4423b5c33b3ba0b1375f>,
+        <https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/EnergyResourceOntology.owl#EnergyParameter> .
+
+<http://energy.linkeddata.es/em-kpi/ontology#KPICalculation> a owl:Class ;
+    rdfs:label "KPICalculation"@en ;
+    rdfs:comment "The KPI calculation to calculate specific KPI with mathematical model and datum source"@en ;
+    rdfs:subClassOf </.well-known/genid/emkpi/N4cae2bf8c6a04c5f92525f0d82d51ea2>,
+        </.well-known/genid/emkpi/N5758be94132844cd8c56f2dfcc36fa0f>,
+        </.well-known/genid/emkpi/N6132202bac3f45869f4ebb7b23c0c992>,
+        </.well-known/genid/emkpi/N6a562b4bc92d4ca1b1f0d60eaf1d44a1>,
+        </.well-known/genid/emkpi/N8693652999f047f092452f9d29f167f7>,
+        </.well-known/genid/emkpi/N8e79629d7c164b3c8e0d94a4d6d0f1f6>,
+        </.well-known/genid/emkpi/N99edfca76f624564a04bc8f445e15135> .
+

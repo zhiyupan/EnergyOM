@@ -1,0 +1,10 @@
+Entity1,Entity2
+https://saref.etsi.org/core/Device,https://w3id.org/sbeo#Device
+https://saref.etsi.org/core/Sensor,http://www.w3.org/ns/sosa/Sensor
+https://saref.etsi.org/saref4bldg/Building,https://w3id.org/seas/Building
+https://saref.etsi.org/saref4bldg/BuildingSpace,https://w3id.org/seas/BuildingSpace
+https://saref.etsi.org/saref4bldg/Sensor,http://www.w3.org/ns/sosa/Sensor
+https://saref.etsi.org/core/hasValue,https://w3id.org/sbeo#hasValue
+https://saref.etsi.org/saref4bldg/height,https://w3id.org/sbeo#height
+https://saref.etsi.org/saref4bldg/length,https://w3id.org/sbeo#length
+https://saref.etsi.org/saref4bldg/size,https://w3id.org/sbeo#size
